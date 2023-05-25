@@ -1,0 +1,580 @@
+.mainh1{
+    font-size: 25px;
+    margin: 0px 60px;
+    
+}
+
+
+
+
+
+
+
+
+.backp{    
+    width: 100%;
+    max-width:100%;
+    max-height: 600px;        
+    opacity: 0.9;
+    position: absolute;
+    
+}
+.navbar{
+   /* border: 2px solid red;*/
+   
+    padding: 35px 0px 0px 0px;
+    height: 40px;
+    position: relative;
+    
+    
+}
+.logo{
+    
+    margin: 0px 0px 0px 50px;
+    width: 32%;
+    height: 100%;
+    float: left;
+}
+.navoption{
+    /*border: 1px solid red;*/
+    margin: 0px 0px 0px 0px;
+    width: 40%;
+    height: 100%;
+    float: right;
+}
+.option{
+    /*border: 1px solid yellow ;*/
+    width: 20%;
+    height: 100%;
+    display: inline-block;
+    font-size: 12px;
+    text-align:center;
+    
+    
+}
+.linkcol{
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    
+  
+}
+
+.insitetext{
+    width: 50%;
+    top:35%;
+    left: 25%;
+    text-align: center;
+    position: relative;
+    
+    
+}
+.insiteh1{
+    font-size: 25px;
+    width: 95%;
+    margin: 10px 10px;
+    backdrop-filter: blur(3px);    
+}
+.blurback{
+    backdrop-filter: blur(3px);
+    width: 95%;
+    margin: 0px 10px;
+}
+.buttoninsite{
+    margin: 10px 0px;
+}
+.logosize{
+    width: 25%;
+    height: 120%;
+    float: left;
+}
+.schoolname{
+    font-size: 15px;
+    float: right;
+    margin: 0px 45px 0px 0px;
+    
+}
+
+
+
+
+
+
+
+
+
+.servicemain{
+    position:relative;
+    width: 100%;
+    height: 550px;
+    top:340px;
+}
+
+.servimg{
+    width: 30%;
+    height: 40%;
+    position: absolute;
+    top: 10px;
+}
+.servh3{
+    position: absolute;
+    margin: 10px 0px 0px 0px;
+}
+.servp{
+    margin: 120px 0px 0px 0px;
+
+}
+
+
+
+
+
+
+.videomain{
+    width: 100%;
+    height: 600px;
+    margin: 50px 0px 0px 0px;
+    top: 110px;
+    position: relative;
+}
+.videoindiv1{
+    width: 100%;
+    height: 31.5%;
+}
+.videoindiv2{
+    width: 100%;
+    height: 57%;
+    position: absolute;
+}
+.vdiv2in1{
+    width: 60%;
+    height: 100%;
+}
+.vdiv2in2{
+    width: 40%;
+    height: 100%;
+    float: right;    
+    position: absolute;  
+    top:0px;  
+    right: 0px;
+}
+.insideiamge{
+    position: absolute;
+    top: 50%;
+    left: 30%;    
+    
+}
+
+.vdiv2in2:hover  .insideiamge{
+    display: none;
+}
+
+.vdiv2in2:hover  .insidelist{
+    display: block;
+}
+.insidelist{
+    position: absolute;
+    top: 1%;
+    left: 5%;
+    display: none;
+    
+}
+.insidelist li{
+    margin: 30px 0px;
+    font-size: 20px;
+    font-weight: bold;
+}
+.viddivimg{
+    width: 100%;
+    height: 100%;
+    opacity: 0.8;
+}
+.textdivmainBL{
+    background-color: rgb(39, 39, 39);
+    
+      
+}
+.textdivmainB{
+    background-color: skyblue;
+       
+}
+.insiderankdivBL{
+    font-size: 20px;
+    color: skyblue;
+    text-align: center;
+    
+}
+.insiderankdivB{
+    font-size: 20px;
+    color: black;
+    text-align: center;
+       
+}
+
+
+
+
+
+
+.erpmain{
+    position: relative;
+    height: 300px;
+    top:110px;
+}
+.erpindiv{
+    width: 40%;
+    height: 100%;
+    margin: 15px 45px;
+    display: inline-block;
+    box-shadow: 5px 10px;
+    border-radius: 10px;
+}
+.sterp{
+    max-width:40%;
+    height: 100%;
+    position: absolute;
+    border-radius: 10px;
+
+}
+.erph3{
+    position: absolute;
+    color: black;
+    float: right;
+    margin: 180px 0px 0px 220px;
+    backdrop-filter: blur(8px);
+
+}
+.erph3N{
+    position: absolute;
+    color: black;
+    margin: 180px 0px 0px 25px;
+    backdrop-filter: blur(8px);
+
+}
+.erpbutton{
+    position:absolute;
+    margin: 215px 255px;
+    
+}
+.erpbuttonN{
+    position: absolute;
+    margin: 215px 65px;
+}
+.stuloginmain{
+    width: 60%;
+    height: 80%;
+    position: fixed;
+    top:10%;
+    left:18%;
+    z-index: 10000;
+    display: none;
+    background-color: rgb(128, 250, 71);
+    box-shadow: 5px 10px;
+    border-radius: 20px;
+    z-index: 1;
+
+}
+.teachloginmain{
+    border: 2px solid red;
+    width: 60%;
+    height: 80%;
+    position: fixed;
+    top:10%;
+    left:18%;
+    z-index: 10000;
+    display: none;
+    background-color: rgb(64, 228, 240);
+    box-shadow: 5px 10px;
+    border-radius: 20px;
+    z-index: 1;
+}
+.closebdiv{
+   
+    width: 100%;
+    height: 10%;
+}
+.closebutton{
+    transform: scale(1.5);
+    float:right;
+    margin: 15px 20px;
+}
+
+
+
+
+
+
+
+
+.aboutmain{
+    height: 600px;
+    position: relative;
+    top:220px;
+    
+}
+.aboutpdiv{
+    margin: 0px 0px 10px 0px;
+    width: 100%;
+    height: 225px;
+    background-color:skyblue ;
+
+}
+.aboutvid{
+    border: 2px solid black;
+    width: 55%;
+    height: 300px;
+    margin: 20px 10px;
+    display: inline-block;
+}
+.aboutpic{
+    width: 40%;
+    height: 340px;
+    margin: 0px 10px;
+    float: right;
+}
+.imageabout{
+   
+    width: 100%;
+    height: 50%;
+}
+.abouts1{
+    width:100%;
+    height: 98%;
+}
+.abouts23{
+    width:50%;
+    height: 98%;
+}
+.aboutpass{
+    font-size: 20x;
+    margin: 30px 50px 0px 50px;
+}
+
+
+
+
+
+
+
+.contactmain{
+    width: 100%;
+    height: 600px;
+    position: relative;
+    top: 230px;
+}
+.contactindiv{
+    position:absolute;
+    width: 100%;
+    height: 60%;
+    top:20%;
+    background-color: skyblue;
+}
+.contactformd{
+    position: absolute;
+    width: 40%;
+    height: 80%;
+    top: 10%;
+    left:50%;
+    background-color: rgb(121, 160, 235);
+    box-shadow: 5px 10px;
+}
+.contacth1{
+    
+    text-align: center;
+    margin: 40px 0px 0px 0px;
+}
+.contactformdiv2{
+    
+    width: 60%;
+    margin: 30px 20%;
+}
+.formbcolor{
+    background-color: rgb(121, 160, 235);
+}
+
+.mat-from {
+    width: 100%;
+}
+.buttoncontact{
+    width:60%;
+    margin-left: 20%;
+}
+.contactno{
+    height: 100%;
+    width: 40%;
+    float: left;
+    margin: 0px 50px;
+}
+.contactnoin{
+    text-align: center;
+    width: 100%;
+    height: 25%;
+    margin: 5px 0px;
+}
+.contacticon{
+    display: inline;
+    height: 100%;
+    margin: 0px 10px;
+}
+.contacth1N{
+    width: 40%;
+    height: 40px;
+    margin: 27px 0px 0px 80px;
+   
+    
+    
+}
+.contactinfo{
+    float: left;
+    margin: -20px 0px;
+    font-size: 20px;
+    width: 100%;
+}
+
+
+
+
+
+
+
+.imageg{
+    height: 600px;
+    width: 100%;
+    margin: 260px 0px;
+    position: relative;
+}
+.imageindiv{
+    border: 2px solid black;
+    width: 45%;
+    height: 90%;
+    margin: 20px 20px ;
+    display: inline-block;
+}
+.imageindivh1{
+    text-align: center;
+}
+.imageIMG{
+    border: 2px solid red;
+    width: 100%;
+    height: 80%;
+}
+
+
+
+
+
+
+
+
+
+.footermain{
+    position: relative;
+    height: 400px;
+    overflow: hidden;
+    top:350px;
+}  
+.footshap {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: skyblue;
+    transform: skewY(5deg);
+    transform-origin: left bottom;
+    
+}
+
+.footinmain{
+    top:100px;
+}
+.footlogo{
+    width: 15%;
+    position: absolute;
+    left:50px;
+    top:55px;
+}
+.footh1{
+    font-size: 18px;
+    position: absolute;
+    left:115px;
+    top:58px;
+}
+.fa-facebook {
+    color: black;
+    font-size: 20px;
+    text-decoration: none;
+    margin: 0px 10px;
+}
+.fa-instagram {
+    color: black;
+    font-size: 20px;
+    text-decoration: none;
+    margin: 0px 10px;
+
+}
+.fa-twitter {
+    color: black;
+    font-size: 20px;
+    text-decoration: none;
+    margin: 0px 10px;
+
+}
+.fa-linkedin {
+    color: black;
+    font-size: 20px;
+    text-decoration: none;
+    margin: 0px 10px;
+
+}
+.footcompany{
+    font-size: 25px;
+    position: absolute;
+    top:10%;
+}
+.footcompp{
+    font-size: 15px;
+    position: absolute;
+    top:60px;
+    
+}
+.footcompp1{
+    font-size: 15px;
+    position: absolute;
+    top:90px;
+}
+.footcompp2{
+    font-size: 15px;
+    position: absolute;
+    top:120px;
+}
+.footcompp3{
+    font-size: 15px;
+    position: absolute;
+    top:150px;
+}
+.footlink{
+    text-decoration: none;
+    color: black;
+
+}
+.footcontp{
+    font-size: 15px;
+    margin: 0px 10px 0px 0px;
+}
+.map{
+    width: 140px;
+    height: 190px;
+    position: relative;
+}
+.footcontact{
+    font-size: 25px;
+    position: absolute;
+    left: 40px;
+    top:10%;
+}
+.footcopy{
+    width: 100%;
+    height: 30px;
+    position: relative;
+    top:30px;
+    text-align: center;
+    font-size: 13px;
+}
