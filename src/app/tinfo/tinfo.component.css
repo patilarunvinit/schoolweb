@@ -1,0 +1,46 @@
+.maininfo{
+    width: 100%;
+    height: 100%;
+}
+.dpback{
+    background-color: skyblue;
+    width: 100%;
+    height: 30%;
+    position: absolute;
+    top:0px;
+}
+.dpdiv{
+    border: 2px solid black;
+    border-radius: 50%;
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top:100%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    
+}
+.dpimg{
+    border-radius: 50%;
+    width: 100%;
+    height: 100%;
+}
+.infodivinside{
+    width: 80%;
+    height: 50%;
+    position: absolute;
+    top: 72%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 25px;
+}
+.backphoto{
+    width: 100%;
+    height: 100%;
+
+}
+
+mat-grid-tile {
+    background: rgb(194, 255, 137);
+    border-radius: 25px;
+  }

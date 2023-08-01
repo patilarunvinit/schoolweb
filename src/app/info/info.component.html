@@ -1,0 +1,25 @@
+<div class="maininfo">
+    <div class="dpback" >
+        <app-logout></app-logout>
+        <img alt="dp" [src]=s1 class="backphoto">   
+
+        <div class="dpdiv">
+            <img alt="dp" src='http://127.0.0.1:8000{{image}}' class="dpimg">    
+        </div>
+    </div>
+    <div class="infodivinside">
+        <mat-grid-list cols="2" rowHeight="25%">
+            <mat-grid-tile>NAME:-<strong>{{name}}</strong> </mat-grid-tile>
+            <mat-grid-tile>MOTHER:-<strong>{{mother}}</strong></mat-grid-tile>
+            <mat-grid-tile>CLASS/DIV:-<strong>{{class_div}}</strong></mat-grid-tile>
+            <mat-grid-tile>ROLL NO:- <strong>{{roll_no}}</strong></mat-grid-tile>
+            <mat-grid-tile>REG NO:- <strong>{{reg_no}}</strong></mat-grid-tile>
+            <mat-grid-tile>MOBILE NO:-<strong>{{mobile_no}}</strong></mat-grid-tile>
+            <mat-grid-tile>B-DAY:- <strong>{{b_day}}</strong></mat-grid-tile>
+            <mat-grid-tile>ADDRESS:- <strong>{{address}}</strong></mat-grid-tile>
+
+          </mat-grid-list>    
+    </div>
+</div>
+
+

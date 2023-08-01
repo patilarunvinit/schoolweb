@@ -1,6 +1,15 @@
-import { Component } from '@angular/core';
+import { Component, OnInit,Input  } from '@angular/core';
 import {HttpClient} from '@angular/common/http';
 
+import {Router} from '@angular/router' 
+import {ActivatedRoute} from '@angular/router';
+
+
+
+
+import {CookieService} from 'ngx-cookie-service';
+
+import * as CryptoJS from 'crypto-js';
 
 @Component({
   selector: 'app-home',
@@ -11,15 +20,91 @@ export class HomeComponent {
   display1:any;
   display2:any;
   data:any;
-  constructor (private http:HttpClient, ){}
-  ngOnInit(){
+  errors:any;
+  breakpoint:any;
+  cols:any;
+  erpcols:any;
+  width:any;
+  footcols:any;
+  colspan1:any;
+  colspan2:any;
+  rowHeight:any;
+  massage:any;
+  username:any;
+  name:any;
+  mother:any;
+  class_div:any;
+  roll_no:any;
+  reg_no:any;
+  mobile_no:any;
+  b_day:any;
+  address:any;
+  image:any;
 
-    this.http.get("http://127.0.0.1:8000/timetable/")
-   .subscribe((result)=>{
-      console.log("result",result)
-      this.data=result;
-   })
+
+ 
+  
+
+  constructor (
+    private http:HttpClient,
+    private Router:Router,
+    private route: ActivatedRoute,
+    private cookieService: CookieService )
+    {}
+  ngOnInit(){
+    this.width = (window.innerWidth) ;
+    if(this.width<=600){
+      this.cols="1";
+      this.erpcols="1";
+      this.footcols="1";
+      this.colspan1="1";
+      this.colspan2="1";
+      this.rowHeight="2:1";
+
+
+    }
+    else{
+      this.cols="3";
+      this.erpcols="2";
+      this.footcols="5";
+      this.colspan1="1";
+      this.colspan2="2";
+      this.rowHeight="80%"
+
     
+
+    }
+
+    
+    
+
+    
+    
+    
+  }
+
+  onResize(event:any) {
+    this.width = (window.innerWidth) ;
+    if(this.width<=600){
+      this.cols="1";
+      this.erpcols="1";
+      this.footcols="1";
+      this.colspan1="1";
+      this.colspan2="1";
+      this.rowHeight="2:1";
+
+
+    }
+    else{
+      this.cols="3";
+      this.erpcols="2";
+      this.footcols="5";
+      this.colspan1="1";
+      this.colspan2="2";
+      this.rowHeight="80%";
+
+
+    }
   }
   
   dis1() { 
@@ -27,19 +112,91 @@ export class HomeComponent {
     this.display1='block'
     this.display2='none'
     
- }
- dis2() { 
+  }
+  dis2() { 
     
   this.display2='block'
   this.display1='none'
   
-}
-close1() { 
+  }
+  close1() { 
     
   this.display2='none'
   this.display1='none'
   
-}
+  }
+
+
+  nav(fregment:any){
+    this.Router.navigateByUrl('home#'+ fregment)
+ 
+  }
+
+  /* for Crypto a data in storage */ 
+  key="data";
+  encrypt(txt:any): string {
+      return CryptoJS.AES.encrypt(txt, this.key).toString();
+  }
+
+
+  studentlogin(data:any) {
+    console.log(data);
+    this.http.post("http://127.0.0.1:8000/slogin/", data)
+    .subscribe((res:any)=>{
+      this.data=res
+      this.massage=res.massage
+      this.data=res.Sdata
+      alert(this.massage)
+      if(this.massage=="logged in successfuly"){
+
+        /*for session Storage */
+        sessionStorage.setItem(this.key,this.encrypt(JSON.stringify(this.data)))
+
+        this.Router.navigate(['slogin'])
+      }
+    },
+    (error:any) => {
+      console.log(error)
+      this.errors = error;
+      alert(this.errors.error.error)
+    },
+    
+    )  
+    
+   
+    
+   
+
+  }
+
+
+  
+
+  teacherlogin(data:any) {
+    console.log(data);
+    this.http.post("http://127.0.0.1:8000/tlogin/", data)
+    .subscribe((res:any)=>{
+      this.data=res
+      this.massage=res.massage
+      this.data=res.Sdata
+      alert(this.massage)
+      if(this.massage=="logged in successfuly"){
+        sessionStorage.setItem(this.key,this.encrypt(JSON.stringify(this.data)))
+
+        this.Router.navigate(['tlogin'])
+      }
+    },
+    (error:any) => {
+      console.log(error)
+      this.errors = error;
+      alert(this.errors.error.error)
+    },
+    
+    )  
+   
+
+  }
+
 
 
   backphoto:string="assets/img/back.jpg"
@@ -62,3 +219,31 @@ close1() {
 
 
 }
+
+
+
+/*
+1- for cookis
+this.cookieService.set('data1',JSON.stringify(this.data));
+
+2-to decrypt
+ private decrypt(txtToDecrypt: string) {
+    return CryptoJS.AES.decrypt(txtToDecrypt, this.key).toString(CryptoJS.enc.Utf8);
+  }
+
+2- to get data back and delete
+
+ public getData(key: string) {
+    let data = localStorage.getItem(key) || "";
+    return this.decrypt(data);
+  }
+  public removeData(key: string) {
+    localStorage.removeItem(key);
+  }
+
+
+
+  4- route data to next page
+   this.Router.navigate(['slogin'], { state: { data: this.data },
+        replaceUrl: true })
+*/

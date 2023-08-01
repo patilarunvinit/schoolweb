@@ -2,57 +2,86 @@
 <p>home works!</p>
 -->
 
-
+  
 <img alt="back photo" [src]=backphoto class="backp">
-<div class="navbar">
+  
+  <div class="navbar" id="home">
     <div class="logo">
         <img alt="back photo" [src]=logo class="logosize">
         <h1 class="schoolname"><strong>INDIA HIGH SCHOOL, INDIA</strong></h1>
     </div>
     <div class="navoption">
-        <div class="option"><a href="" class="linkcol"><strong>HOME</strong></a></div>
-        <div class="option"><a href="#about" class="linkcol"><strong>ABOUT US</strong></a></div>
-        <div class="option"><a href="" class="linkcol"><strong>CONTACT</strong></a></div>
+        <div class="option"><a (click)="nav('home')" class="linkcol"><strong>HOME</strong></a></div>
+        <div class="option"><a (click)="nav('about')" class="linkcol"><strong>ABOUT US</strong></a></div>
+        <div class="option"><a (click)="nav('contact')" class="linkcol"><strong>CONTACT</strong></a></div>
         <div class="option"><a href="" class="linkcol"><strong>BLOG</strong></a></div>
 
     </div>
+    
+    <div class="navoptionM">
+        <mat-icon class="mobinavcon">dehaze</mat-icon>
+        <div class="mobileoptiondiv">
+            <button class="navbotton" type="button" mat-button (click)="nav('home')">
+                HOME
+            </button>
+
+            <button class="navbotton" type="button" mat-button (click)="nav('about')">
+                ABOUT
+            </button>
+
+            <button class="navbotton" type="button" mat-button (click)="nav('contact')">
+                CONTACT
+            </button>
+
+            <button class="navbotton" type="button" mat-button (click)="nav('BLOG')">
+                BLOG
+            </button>
+
+    
+        </div>
+
+    </div>
+    
+    
 
 </div>
+<!--
 <div class="insitetext">
     <h1 class="insiteh1"><strong>BEST EDUCATION FOR SCHOOL</strong></h1>
     <h3 class="blurback">Engaging all students in partnership with family and community <br>to become informed, compassionate, global citizens.</h3>
     <button mat-raised-button color="warn" class="buttoninsite">Join Us</button>
 </div>
+-->
+
 
 
 
 
 <div class="servicemain">
     <h1 class="mainh1"><strong>WHY CHOOS US</strong></h1>
-    <mat-grid-list cols="3" >
-        <mat-grid-tile >
+    <mat-grid-list  [cols]="cols" (window:resize)="onResize($event)">
+        <mat-grid-tile class="test890">
             <img alt="back photo" [src]=learning class="servimg">
             <h3 class="servh3"><strong>LEARNING</strong></h3>
-            <p class="servp">Education is the key to all the <br> locked doors of the unknown.</p>
+            <p class="servp">Education is the key to all the  locked doors of the unknown.</p>
                    
         </mat-grid-tile>
-        <mat-grid-tile >
+        <mat-grid-tile class="test890">
             <img alt="back photo" [src]=event class="servimg">
             <h3 class="servh3"><strong>EVENTS</strong></h3>
-            <p class="servp">Memorable events don't just happen.<br> They happen to be our business.</p>
+            <p class="servp">Memorable events don't just happen. They happen to be our business.</p>
         
         </mat-grid-tile>
-        <mat-grid-tile >
+        <mat-grid-tile class="test890">
             <img alt="back photo" [src]=teacher class="servimg">
             <h3 class="servh3"><strong>TELENTED TEACHERS</strong></h3>
-            <p class="servp">Good teaching is one-fourth preparation<br> and three-fourths theater.</p>
+            <p class="servp">Good teaching is one-fourth preparation and three-fourths theater.</p>
         
         </mat-grid-tile>
     </mat-grid-list>
 </div>
-
-
-
+  
+<P>{{width}}</P>
 
 
 <div class="videomain">
@@ -121,28 +150,76 @@
 
 <div class="erpmain">
     <h1  class="mainh1"><strong>ERP LOGIN</strong></h1>
-    <div class="erpindiv">
-        <img alt="back photo" [src]=student class="sterp">
-        <h2 class="erph3"><strong>STUDENT LOGIN</strong></h2>
-        <button mat-raised-button color="warn" class="erpbutton" (click)="dis1()">LOGIN</button>
+    <mat-grid-list [cols]=erpcols rowHeight="100%" >
+        <mat-grid-tile >
+            <div class="erpdivintile">
+                <img alt="back photo" [src]=student class="sterp">
+                <h2 class="erph3"><strong>STUDENT LOGIN</strong></h2>
+                <div class="erphoverdiv">
+                    <button mat-raised-button color="warn" class="erpbutton" (click)="dis1()">LOGIN</button>
+                </div>
+            </div>
+        </mat-grid-tile>
+        <mat-grid-tile >
+            <div class="erpdivintile">
+                <img alt="back photo" [src]=techererp class="sterp">
+                <h2 class="erph3N"><strong>TEACHER LOGIN</strong></h2>
+                <div class="erphoverdiv">
+                    <button mat-raised-button color="warn" class="erpbuttonN" (click)="dis2()">LOGIN</button>
+                </div>
+            </div>
+        
+            
+        </mat-grid-tile>
+        
+      </mat-grid-list>
 
-
-    </div>
-    <div class="erpindiv">
-        <img alt="back photo" [src]=techererp class="sterp">
-        <h2 class="erph3N"><strong>TEACHER LOGIN</strong></h2>
-        <button mat-raised-button color="warn" class="erpbuttonN" (click)="dis2()">LOGIN</button>
-      
-    </div>
 </div>
 
 <!--
+    <div class="erpmain">
+    <h1  class="mainh1"><strong>ERP LOGIN</strong></h1>
+    <mat-grid-list cols="2" rowHeight="100%">
+        <mat-grid-tile style="border: 2px solid red;">
+            <img alt="back photo" [src]=student class="sterp">
+            <h2 class="erph3"><strong>STUDENT LOGIN</strong></h2>
+            <button mat-raised-button color="warn" class="erpbutton" (click)="dis1()">LOGIN</button>
+
+        </mat-grid-tile>
+        <mat-grid-tile>
+            <img alt="back photo" [src]=techererp class="sterp">
+            <h2 class="erph3N"><strong>TEACHER LOGIN</strong></h2>
+            <button mat-raised-button color="warn" class="erpbuttonN" (click)="dis2()">LOGIN</button>
+      
+        </mat-grid-tile>
+      </mat-grid-list>
+
+</div>
+
+
+
     student login window
 -->
 <div class="stuloginmain" [style.display]="display1">
     <div class="closebdiv">
-        <mat-icon (click)="close1()" class="closebutton">clear</mat-icon>
-       
+        <mat-icon (click)="close1()" class="closebutton">clear</mat-icon>       
+    </div>
+    <div style="width: 80%;height: 60%;left: 10%;top:20%;position: absolute;">
+        <form #userPost="ngForm" enctype="multipart/form-data" method="POST" class="example-form" (ngSubmit)="studentlogin(userPost.value)">
+                        
+            <mat-form-field class="mat-from1"> 
+                <mat-label >USERNAME</mat-label>
+                <input matInput name="username"   placeholder="Ex. vinit" ngModel>
+            </mat-form-field><br>
+        
+            <mat-form-field  class="mat-from1">
+              <mat-label>PASSWORD</mat-label>
+              <input matInput type="password" name="password"  placeholder="Enter Password Here" ngModel>
+            </mat-form-field><br>
+
+            <button mat-raised-button color="warn" value = "submit" type="submit"  class="buttonSlogin" >SINGIN</button>
+
+        </form>
     </div>
     
 </div>
@@ -152,8 +229,24 @@
 -->
 <div class="teachloginmain" [style.display]="display2">
     <div class="closebdiv">
-        <mat-icon (click)="close1()" class="closebutton">clear</mat-icon>
-       
+        <mat-icon (click)="close1()" class="closebutton">clear</mat-icon>   
+        <div style="width: 80%;height: 60%;left: 10%;top:20%;position: absolute;">
+            <form #userPost2="ngForm" enctype="multipart/form-data" method="POST" class="example-form" (ngSubmit)="teacherlogin(userPost2.value)">
+                            
+                <mat-form-field class="mat-from1"> 
+                    <mat-label >USERNAME</mat-label>
+                    <input matInput name="username"   placeholder="Ex. jyotsna" ngModel>
+                </mat-form-field><br>
+            
+                <mat-form-field  class="mat-from1">
+                  <mat-label>PASSWORD</mat-label>
+                  <input matInput type="password" name="password"  placeholder="Enter Password Here" ngModel>
+                </mat-form-field><br>
+    
+                <button mat-raised-button color="warn" value = "submit" type="submit"  class="buttonSlogin" >SINGIN</button>
+    
+            </form>
+        </div>    
     </div>
     
 </div>
@@ -163,10 +256,10 @@
 
 
 
-<div class="aboutmain" id="about">
+<div class="aboutmain" id="about" >
+    <h1 class="mainh1"><strong>ABOUT US</strong></h1>
     
     <div class="aboutpdiv">
-        <h1 class="mainh1"><strong>ABOUT US</strong></h1>
         <p class="aboutpass">A good school will have fair-minded, passionate, honest, well-mannered, inspirer, skilled, and supportive mentors who will have a strong positive impact on the student’s attitude and personality. A quality teacher will always take out time to update their knowledge, improve their skills, and find ways to make the students motivated and engaged while teaching. Similarly, the administrators of a good school will be highly supportive and professional to the requirements of academic staff. <br>A good school will maintain hygiene and have a comfortable setting for students to be able to develop their skills and grasp knowledge.Cambridge School is one of the top schools in Greater Noida and is known for its green, safe, spacious, and well-organized infrastructure to ensure effective space for proper child learning and growth.</p>
     </div>
     <div class="aboutvid">
@@ -193,7 +286,7 @@
 
 
 
-<div class="contactmain">
+<div class="contactmain" id="contact">
     <div class="contactindiv">
         <div class="contactno">
             <div class="contactnoin">
@@ -265,6 +358,7 @@
 <div class="footermain">
     <div class="footshap">
     </div>
+
     <!--
     <mat-grid-list cols="3" rowHeight="70%" class="footinmain">
         
@@ -293,11 +387,11 @@
 
          </mat-grid-tile>
         </mat-grid-list>
+    -->
+        
 
-        -->
-
-    <mat-grid-list cols="5" rowHeight="80%" class="footinmain">
-        <mat-grid-tile colspan="2" >
+    <mat-grid-list [cols]=footcols [rowHeight]=rowHeight class="footinmain">
+        <mat-grid-tile [colspan]=colspan2 >
             <img alt="logo" [src]=logo class="footlogo">
             <h1 class="footh1"><strong>INDIA HIGH SCHOOL, INDIA</strong></h1>
             <a href="https://www.facebook.com/" class="fa fa-facebook"></a>
@@ -305,7 +399,7 @@
             <a href="https://www.instagram.com/" class="fa fa-twitter"></a>
             <a href="https://www.linkedin.com/" class="fa fa-linkedin"></a>
         </mat-grid-tile>
-        <mat-grid-tile colspan="1" class="test2" >
+        <mat-grid-tile [colspan]=colspan1 class="test2" >
             <h1 class="footcompany"><strong>COMPANY</strong></h1>
             <h3 class="footcompp"><a href="" class="footlink"><strong>HOME</strong></a></h3>
             <h3 class="footcompp1"><a href="" class="footlink"><strong>ABOUT US</strong></a></h3>
@@ -313,7 +407,7 @@
             <h3 class="footcompp3"><a href="" class="footlink"><strong>BLOG</strong></a></h3>
             
         </mat-grid-tile>
-        <mat-grid-tile colspan="2" class="test2" >
+        <mat-grid-tile [colspan]=colspan2 >
             <h1 class="footcontact"><strong>CONTACT</strong></h1>
             <p class="footcontp">151, 15th Floor, B Wing,<br> Mittal Tower,Nariman Point,<br>Mumbai,<br>Pin- 421 567</p>
             <iframe src="10" id="gmap_canvas" src="https://maps.google.com/maps?q=University Of Mumbai&t=&z=13&ie=UTF8&iwloc=&output=embed" class="map"></iframe>
@@ -324,6 +418,7 @@
         ©2023, indiaschool.com, All rights reserved
 
     </div>
+
 </div>
 
 

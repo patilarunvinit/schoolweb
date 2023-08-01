@@ -9,11 +9,8 @@
 
 
 
-
-
 .backp{    
     width: 100%;
-    max-width:100%;
     max-height: 600px;        
     opacity: 0.9;
     position: absolute;
@@ -22,29 +19,29 @@
 .navbar{
    /* border: 2px solid red;*/
    
-    padding: 35px 0px 0px 0px;
+    padding: 30px 0px 0px 0px;
     height: 40px;
     position: relative;
     
     
 }
 .logo{
-    
-    margin: 0px 0px 0px 50px;
-    width: 32%;
+    margin: 30px 0px 0px 20px;
+    width: 70%;
     height: 100%;
     float: left;
+    display: flex;
+    justify-content:flex-start;
 }
 .navoption{
-    /*border: 1px solid red;*/
-    margin: 0px 0px 0px 0px;
     width: 40%;
     height: 100%;
     float: right;
+    display: flex;
+    justify-content: space-around;
 }
 .option{
-    /*border: 1px solid yellow ;*/
-    width: 20%;
+    width: 25%;
     height: 100%;
     display: inline-block;
     font-size: 12px;
@@ -60,11 +57,13 @@
 }
 
 .insitetext{
+    border: 2px solid blue;
     width: 50%;
     top:35%;
     left: 25%;
     text-align: center;
-    position: relative;
+    position: absolute;
+    align-items:end;
     
     
 }
@@ -83,15 +82,15 @@
     margin: 10px 0px;
 }
 .logosize{
-    width: 25%;
-    height: 120%;
-    float: left;
+    width: 50px;
+    height: 50px;
 }
 .schoolname{
     font-size: 15px;
-    float: right;
-    margin: 0px 45px 0px 0px;
-    
+    margin: 0px 0px 0px 5px;
+}
+.navoptionM{
+    display: none;
 }
 
 
@@ -106,8 +105,11 @@
     position:relative;
     width: 100%;
     height: 550px;
-    top:340px;
+    max-height: 550px;
+    top:500px;
+    justify-content: space-around;
 }
+
 
 .servimg{
     width: 30%;
@@ -121,6 +123,7 @@
 }
 .servp{
     margin: 120px 0px 0px 0px;
+    width: 70%;
 
 }
 
@@ -133,7 +136,7 @@
     width: 100%;
     height: 600px;
     margin: 50px 0px 0px 0px;
-    top: 110px;
+    top: 300px;
     position: relative;
 }
 .videoindiv1{
@@ -218,46 +221,69 @@
 .erpmain{
     position: relative;
     height: 300px;
-    top:110px;
-}
-.erpindiv{
-    width: 40%;
-    height: 100%;
-    margin: 15px 45px;
-    display: inline-block;
-    box-shadow: 5px 10px;
-    border-radius: 10px;
+    top:280px;
 }
 .sterp{
-    max-width:40%;
-    height: 100%;
+    
+    width:80%;
+    height: 80%;
     position: absolute;
     border-radius: 10px;
+
+}
+.erpdivintile{
+    top: 0%;
+    width: 80%;
+    height: 80%;
+}
+.erphoverdiv{
+    display: none;
+    position: relative;
+    width: 100%;
+    height: 100%;
+}
+.erpdivintile:hover .erphoverdiv{
+    display: flex;
+}
+.erpdivintile:hover .sterp{
+    filter: blur(7px);
+
+}
+.erpdivintile:hover .erph3{
+    display: none;
+
+}
+.erpdivintile:hover .erph3N{
+    display: none;
 
 }
 .erph3{
     position: absolute;
     color: black;
     float: right;
-    margin: 180px 0px 0px 220px;
+    top:20%;
+    right: 20%;
     backdrop-filter: blur(8px);
 
 }
 .erph3N{
     position: absolute;
     color: black;
-    margin: 180px 0px 0px 25px;
+    top:20%;
+    left: 20%;
     backdrop-filter: blur(8px);
 
 }
 .erpbutton{
     position:absolute;
-    margin: 215px 255px;
+    top: 50%;
+    left: 40%;
     
 }
 .erpbuttonN{
     position: absolute;
-    margin: 215px 65px;
+    top: 50%;
+    left: 40%;
 }
 .stuloginmain{
     width: 60%;
@@ -267,7 +293,7 @@
     left:18%;
     z-index: 10000;
     display: none;
-    background-color: rgb(128, 250, 71);
+    background-color:skyblue;
     box-shadow: 5px 10px;
     border-radius: 20px;
     z-index: 1;
@@ -297,6 +323,18 @@
     float:right;
     margin: 15px 20px;
 }
+.mat-from1 {
+    position: relative;
+    width: 80%;
+    left: 10%;
+    margin: 10px 0px;
+}
+.buttonSlogin{
+    width:80%;
+    height: 60px;
+    margin-left: 10% ;
+    margin-top: 20px;
+}
 
 
 
@@ -308,7 +346,7 @@
 .aboutmain{
     height: 600px;
     position: relative;
-    top:220px;
+    top:360px;
     
 }
 .aboutpdiv{
@@ -316,6 +354,7 @@
     width: 100%;
     height: 225px;
     background-color:skyblue ;
+    overflow:auto; 
 
 }
 .aboutvid{
@@ -359,7 +398,7 @@
     width: 100%;
     height: 600px;
     position: relative;
-    top: 230px;
+    top: 450px;
 }
 .contactindiv{
     position:absolute;
@@ -436,33 +475,6 @@
 
 
 
-.imageg{
-    height: 600px;
-    width: 100%;
-    margin: 260px 0px;
-    position: relative;
-}
-.imageindiv{
-    border: 2px solid black;
-    width: 45%;
-    height: 90%;
-    margin: 20px 20px ;
-    display: inline-block;
-}
-.imageindivh1{
-    text-align: center;
-}
-.imageIMG{
-    border: 2px solid red;
-    width: 100%;
-    height: 80%;
-}
-
-
-
-
-
-
 
 
 
@@ -470,7 +482,7 @@
     position: relative;
     height: 400px;
     overflow: hidden;
-    top:350px;
+    top:490px;
 }  
 .footshap {
     position: absolute;
@@ -577,4 +589,273 @@
     top:30px;
     text-align: center;
     font-size: 13px;
+}
+
+
+
+@media only screen and (max-width:600px) {
+
+    
+      
+
+    
+.backp{    
+    height: 350px;        
+    
+    
+}
+    .logo{
+        margin: -5px 0px 0px 10px;
+    }  
+    .logosize{
+        width: 30px;
+        height: 30px;
+    }
+    .schoolname{
+        font-size: 10px;       
+        
+    }
+    .navoption{
+        display: none;
+        
+    }
+    .navoptionM{
+        width: 100%;
+        height: 90%;
+        position: relative;
+        display: block;
+
+    }
+    .mobinavcon{
+        float: right;
+       margin: 0px 10px 0px 0px;
+        
+    }
+    .mobileoptiondiv{
+        position: absolute;
+        top:100%;
+        width: 100%;
+        height: 200px;
+        display: none;
+        background-color: skyblue ;
+        
+                
+    }
+
+    .navoptionM:hover  .mobileoptiondiv{
+        display: block;
+        
+    }
+    .navbotton{
+        width: 100%;
+        height: 22%;
+        margin: 3px 0px 2px 0px;
+        background-color: blue;
+    }
+
+
+
+    .servicemain{
+        
+        top:300px;
+        
+    }
+    
+
+    .videomain{
+        top: 1300px;
+    }
+    .vdiv2in1{
+        width: 100%;
+        height: 100%;
+        display: block;
+    }
+    .vdiv2in2{
+        width: 100%;
+        height: 100%;
+        position: relative;
+        
+    }
+
+
+
+    .erpmain{
+        top:1620px;
+    }
+
+
+
+
+    .aboutmain{
+        
+        top:2600px;
+        
+    }
+    .aboutpdiv{        
+        height: 350px;
+    }
+    .aboutvid{        
+        width: 100%;
+        height: 300px;
+        margin: 0px;
+        display: block;
+    }
+    .aboutpic{
+        width: 100%;
+        height: 340px;
+        margin: 0px;
+        float: right;
+    }
+
+
+
+
+    .contactmain{
+        top: 3050px;
+    }
+    .contacth1N{
+        width: 60%;
+        height: 40px;
+        margin: 20px 0px 0px 30px;
+       font-size: 15px;
+        
+        
+    }
+    .contactinfo{
+        font-size: 12px;
+        
+    }
+    .contactnoin{
+        height: 30%;
+    }
+    
+
+
+
+    .footermain{
+        height: 1020px;
+        top:3100px;
+    }
+    .footlogo{
+        width: 10%;
+        left:150px;
+        top:55px;
+    } 
+    .footh1{
+        left:215px;
+        top:58px;
+    }
+    .footcopy{
+        top:105px;
+    }
+    .footcontact{
+        margin: 0px 400% 0px 0px;
+        
+    }
+
+}
+
+
+
+
+@media only screen and (max-width:420px) {
+    .mainh1{
+        font-size: 20px;
+        text-align: center;
+        
+    }
+
+
+
+    .servicemain{
+        
+        top:280px;
+        
+    }
+
+
+
+    .videomain{
+        top: 800px;
+    }
+    
+
+    .erpmain{
+        top:1100px;
+    }
+     
+
+    .aboutmain{
+        
+        top:2050px;
+        
+    }
+
+
+    .contactmain{
+        top: 2530px;
+    }
+    .contacth1N{
+        width: 70%;
+        height: 40px;
+        margin: 10px 0px 0px 20px;
+       font-size: 13px;
+        
+        
+    }
+    .contactinfo{
+        font-size: 10px;
+        
+    }
+    .contactno{
+        
+        margin: 0px 10px;
+    }
+    .contactnoin{
+        height: 30%;
+        margin: 5px 0px;
+    }
+    .contactformd{
+        width: 50%;
+        height: 70%;
+        top: 15%;
+        left:45%;
+        
+    }
+
+
+
+
+    .footermain{
+        height: 820px;
+        top:2550px;
+    }
+    .footlogo{
+        width: 10%;
+        left:80px;
+        top:50px;
+    } 
+    .footh1{
+        font-size: 15px;
+        left:125px;
+        top:53px;
+    }
+    .footcontp{
+        font-size: 13px;
+        margin: 0px 10px 0px 0px;
+    }
+    .footcontact{
+        margin: 0px 40% 0px 0px;
+        
+    }
+    .footcopy{
+        top:150px;
+    }
+
+
+
+    
+
+    
+    
 }

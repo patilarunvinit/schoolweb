@@ -16,15 +16,45 @@ import {MatSelectModule} from '@angular/material/select';
 import { MatInputModule } from '@angular/material/input';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatIconModule} from '@angular/material/icon';
+import { StudentloginComponent } from './studentlogin/studentlogin.component';
+import { InfoComponent } from './info/info.component';
+import { TimetableComponent } from './timetable/timetable.component';
+import { AttandanceComponent } from './attandance/attandance.component';
+import { SadminComponent } from './sadmin/sadmin.component';
+import{ FormsModule} from '@angular/forms';
+import { TeacherloginComponent } from './teacherlogin/teacherlogin.component';
+import { TinfoComponent } from './tinfo/tinfo.component';
+import { TattendanceComponent } from './tattendance/tattendance.component'
+import {MatNativeDateModule} from '@angular/material/core';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import {MatTableModule} from '@angular/material/table';
+import {MatCheckboxModule} from '@angular/material/checkbox';
+import { ReactiveFormsModule } from '@angular/forms';
+import {MatDividerModule} from '@angular/material/divider';
 
 
+
+import { RouterModule, Routes, ExtraOptions } from '@angular/router';
+
+
+import {CookieService} from 'ngx-cookie-service';
+import { LogoutComponent } from './logout/logout.component';
 
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
-    HeaderComponent
+    HeaderComponent,
+    StudentloginComponent,
+    InfoComponent,
+    TimetableComponent,
+    AttandanceComponent,
+    SadminComponent,
+    TeacherloginComponent,
+    TinfoComponent,
+    TattendanceComponent,
+    LogoutComponent
   ],
   imports: [
     BrowserModule,
@@ -38,15 +68,22 @@ import {MatIconModule} from '@angular/material/icon';
     MatInputModule,
     BrowserAnimationsModule,
     MatIconModule,
+    FormsModule,
+    MatNativeDateModule,
+    MatDatepickerModule,
+    MatTableModule,
+    MatCheckboxModule,
+    ReactiveFormsModule,
+    MatDividerModule,
     
-    
-    
-   
-
     
     
   ],
-  providers: [],
+  
+  
+  providers: [
+    CookieService,
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -1,0 +1,99 @@
+<div class="ttmain">
+    
+    <div class="uperdiv">
+        
+        <mat-grid-list cols="1" rowHeight="50%">
+            
+            <mat-grid-tile colspan="1" >
+                NAME:- <b>{{name}}</b>
+                <app-logout ></app-logout>
+            </mat-grid-tile>
+            <mat-grid-tile>CLASS/DIV:-<b>{{class_div}}</b></mat-grid-tile>
+          </mat-grid-list>
+    </div>
+    <div class="lowerdiv">
+        <table class="tttable">
+            <tr >
+                <th>TIME/DAY</th>
+                <th>Monday</th>
+                <th>Tuesday</th>
+                <th>Wednesday</th>
+                <th>Thursday</th>
+                <th>Friday</th>
+                <th>Saturday</th>
+            
+            </tr>
+        
+        
+            <ng-container *ngFor="let item of data; index as i">  
+                <tr *ngIf="i==4; else elseid">
+                    <td><b>{{item.time}}</b></td>
+                    <td colspan="6" style="text-align: center;">break</td>           
+                
+                </tr>
+                <ng-template #elseid>
+                    <tr>
+                        <td><b>{{item.time}}</b></td>
+                        <td>{{item.Monday}}</td>
+                        <td>{{item.Tuesday}}</td>
+                        <td>{{item.Wednesday}}</td>
+                        <td>{{item.Thursday}}</td>
+                        <td>{{item.Friday}}</td>
+                        <td>{{item.Saturday}}</td>
+                    
+                    </tr>
+                
+                </ng-template> 
+            
+        
+            </ng-container>
+            
+        
+        </table>
+    </div>
+
+</div>
+
+
+<!--
+    <table>
+    <tr >
+        <th>TIME/DAY</th>
+        <th>Monday</th>
+        <th>Tuesday</th>
+        <th>Wednesday</th>
+        <th>Thursday</th>
+        <th>Friday</th>
+        <th>Saturday</th>
+    
+    </tr>
+
+
+    <ng-container *ngFor="let item of data; index as i">  
+        <tr *ngIf="i==4; else elseid">
+            <td>{{item.time}}</td>
+            <td colspan="6" style="text-align: center;">break</td>           
+        
+        </tr>
+        <ng-template #elseid>
+            <tr>
+                <td>{{item.time}}</td>
+                <td>{{item.Monday}}</td>
+                <td>{{item.Tuesday}}</td>
+                <td>{{item.Wednesday}}</td>
+                <td>{{item.Thursday}}</td>
+                <td>{{item.Friday}}</td>
+                <td>{{item.Saturday}}</td>
+            
+            </tr>
+        
+        </ng-template> 
+    
+
+    </ng-container>
+    
+
+</table>
+-->
+
+

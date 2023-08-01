@@ -1,0 +1,250 @@
+
+<div class="attmainmain" >
+  
+    <div class="uperdiv">
+        <mat-grid-list cols="2" rowHeight="75%">
+            <mat-grid-tile colspan="1">
+                <button class="optionbutton" type="button" mat-button (click)="optionbu('give')">
+                    GIVE ATTENDANCE
+                </button>
+            </mat-grid-tile>
+            <mat-grid-tile>
+                <button class="optionbutton" type="button" mat-button (click)="optionbu('myatt')">
+                    CHECK ATTENDANCE
+                </button>
+            </mat-grid-tile>
+          </mat-grid-list>
+    </div>
+
+    <div class="lowerdiv">
+      <app-logout></app-logout>
+
+
+
+        <div class="forms1" [style.display]="give">
+            <mat-grid-list cols="1" rowHeight="100%">
+                <mat-grid-tile colspan="1">
+                    <form #userPost="ngForm" enctype="multipart/form-data" method="POST" class="example-form" (ngSubmit)="giveform(userPost.value)">
+                        
+                        <mat-form-field>
+                            <mat-label>STANDERD</mat-label>
+                            <mat-select matInput name="standerd" ngModel>
+                              <mat-option value="1">1</mat-option>
+                              <mat-option value="2">2</mat-option>
+                              <mat-option value="3">3</mat-option>
+                              <mat-option value="4">4</mat-option>
+                              <mat-option value="5">5</mat-option>
+                              <mat-option value="6">6</mat-option>
+                              <mat-option value="7">7</mat-option>
+                              <mat-option value="8">8</mat-option>
+                              <mat-option value="9">9</mat-option>
+                              <mat-option value="10">10</mat-option>
+                            </mat-select>
+                        </mat-form-field><br>
+                    
+
+                        <mat-form-field>
+                            <mat-label>Choose a date</mat-label>
+                            <input matInput name="date" [matDatepicker]="picker" ngModel>
+                            <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                            <mat-datepicker #picker ></mat-datepicker>
+                          </mat-form-field><br>
+            
+                        <button mat-raised-button color="warn" value = "submit" type="submit"  class="buttonSlogin" >NEXT</button>
+            
+                    </form>
+                </mat-grid-tile>
+              </mat-grid-list>
+        </div>
+
+
+
+
+
+
+        <div class="forms2" [style.display]="myatt">
+            <mat-grid-list cols="1" rowHeight="100%">
+                <mat-grid-tile colspan="1">
+                  <form #userPost1="ngForm" enctype="multipart/form-data" method="POST" class="example-form" (ngSubmit)="checkform(userPost1.value)">
+                        
+                    <mat-form-field>
+                        <mat-label>STANDERD</mat-label>
+                        <mat-select matInput name="standerd"  #teams (selectionChange)="filterstand(teams.value)" ngModel>
+                          <ng-container *ngFor="let item1 of filterClass; index as i" >
+                         
+                            <mat-option [value]="item1.class_div" >{{item1.class_div}}</mat-option>
+                        </ng-container>  
+                      </mat-select>
+                    </mat-form-field><br>
+                
+
+                    <mat-form-field>
+                        <mat-label>Choose a date</mat-label>
+                        <mat-select matInput name="date" ngModel>
+                          <ng-container *ngFor="let item1 of filterdate; index as i" >
+                         
+                            <mat-option [value]="item1.date" >{{item1.date}}</mat-option>
+                        </ng-container>  
+                      </mat-select>
+                        
+                      </mat-form-field><br>
+        
+                    <button mat-raised-button color="warn" value = "submit" type="submit"  class="buttonSlogin" >NEXT</button>
+        
+                </form>
+                </mat-grid-tile>
+              </mat-grid-list>
+        </div>
+
+
+
+
+
+
+       
+        <div class="studform" [style.display]="studinfo">
+            <mat-grid-list cols="1" rowHeight="100%" >
+                <mat-grid-tile colspan="1" class="test">  
+                  <div class="scrollclass">            
+                      
+                       
+                      <form (ngSubmit)="attendform()" >
+                        <table >
+                        <tr >
+                          <th>class_div</th>
+                          <th>name</th>
+                          <th>roll no</th>
+                          <th>present</th>
+                        </tr>
+                        <ng-container *ngFor="let item of studdata; index as i" >
+                       
+                          <!--this is for hind data transfer to backend-->
+                          <label><input class="hindinputs"  type="text" name="teacher_name{{i}}" [value]="name" [(ngModel)]="item.teacher_name" ></label>
+                          <label><input class="hindinputs"  type="text" name="date{{i}}" [(ngModel)]="item.date" /></label>
+
+                          
+                          <tr>
+                            <td><label>
+                              <input class="inputnone"  type="text" name="class_div{{i}}" [(ngModel)]="item.class_div" /></label></td>
+                            <td ><label >
+                              <input class="inputnone" type="text" name="name{{i}}"  [(ngModel)]="item.name"/>
+                          </label></td>
+                            <td><label >
+                              <input class="inputnone" type="text" name="roll_no{{i}}"  [(ngModel)]="item.roll_no"/></label>
+                          </td>
+                            <td><section >
+                              <mat-checkbox class="optioninput" name="option{{i}}" [(ngModel)]="item.option">present</mat-checkbox>
+                            </section></td>
+                        
+                        </tr> 
+                        
+                        
+                     
+                      </ng-container>
+           
+                    </table>
+                      </form ><br>
+                   
+                  
+                    <button mat-raised-button color="warn" value = "submit" type="submit" (click)="attendform()" >SUBMITE</button>
+                  
+                      </div>
+                </mat-grid-tile>
+            </mat-grid-list>
+   
+        </div>
+
+
+        
+
+        <div class="fromview" [style.display]="attandS">
+          <mat-grid-list cols="1" rowHeight="100%" >
+              <mat-grid-tile colspan="1" >  
+                <div class="scrollclass">            
+                  <table >
+                    <tr >
+                      <th>class_div</th>
+                      <th>name</th>
+                      <th>roll no</th>
+                      <th>present</th>
+                    </tr>
+                    <ng-container *ngFor="let item3 of checkdata; index as i" >
+                   
+                      <tr>
+                        <td>{{item3.class_div}}</td>
+                        <td>{{item3.name}}</td>
+                        <td>{{item3.roll_no}}</td>
+                        <td><ng-container *ngIf="item3.option else absent">
+                                <b>present</b>
+                            </ng-container>
+                            <ng-template #absent>
+                               <b class="absetclass">absent</b> 
+                          </ng-template>
+                        </td>
+                    
+                    </tr> 
+                    
+                    
+                 
+                  </ng-container>
+       
+                </table>
+                     
+                </div>
+              </mat-grid-tile>
+          </mat-grid-list>
+        </div>
+
+
+    </div>
+</div>
+
+
+
+
+
+
+
+<!--
+
+<mat-form-field>
+                            <mat-label>SUBJECT</mat-label>
+                            <mat-select matInput name="subject" ngModel>
+                              <mat-option value="marathi">marathi</mat-option>
+                              <mat-option value="Hindi">Hindi</mat-option>
+                              <mat-option value="English">English</mat-option>
+                              <mat-option value="Maths">Maths</mat-option>
+                              <mat-option value="Science">Science</mat-option>
+                              <mat-option value="Social Science">Social Science</mat-option>
+                            </mat-select>
+                        </mat-form-field><br>
+
+                        <mat-form-field>
+                            <mat-label>TIME</mat-label>
+                            <mat-select matInput name="time" ngModel>
+                              <mat-option value="8:40 am to 9:20 am">8:40 am to 9:20 am</mat-option>
+                              <mat-option value="9:20 am to 10:00 am">9:20 am to 10:00 am</mat-option>
+                              <mat-option value="10:00 a, to 10:40 am">310:00 a, to 10:40 am</mat-option>
+                              <mat-option value="11:00am to 11:40 a">11:00am to 11:40 am</mat-option>
+                              <mat-option value="11:20 am to 12:20 pm">11:20 am to 12:20 pm</mat-option>
+                              <mat-option value="12:20 pm to 1:00 pm">12:20 pm to 1:00 pm</mat-option>
+                              <mat-option value="1:00 pm to 1:40 pm">1:00 pm to 1:40 pm</mat-option>
+                              <mat-option value="1:40 pm to 2:20 pm">1:40 pm to 2:20 pm</mat-option>
+                              
+                            </mat-select>
+                        </mat-form-field><br>
+
+
+
+
+2- date picker
+
+<mat-form-field>
+                        <mat-label>Choose a date</mat-label>
+                        <input matInput name="date" [matDatepicker]="picker1" ngModel>
+                        <mat-datepicker-toggle matIconSuffix [for]="picker1"></mat-datepicker-toggle>
+                        <mat-datepicker #picker1 ></mat-datepicker>
+                      </mat-form-field><br>s
+
+
+-->
