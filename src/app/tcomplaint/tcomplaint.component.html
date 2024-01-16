@@ -1,0 +1,136 @@
+<div class="main">
+
+    <div class="uperdiv">
+        <mat-grid-list cols="2" rowHeight="75%">
+            <mat-grid-tile colspan="1">
+                <button class="optionbutton1"  [style.background-color]="colourR" type="button" mat-button (click)="optionbu('give')" >
+                  RAISE COMPLAINT
+                </button>
+                </mat-grid-tile>
+            <mat-grid-tile>
+                <button class="optionbutton" [style.background-color]="colourD" type="button" mat-button (click)="optionbu('myatt')">
+                    DElETE COMPLAINT
+                </button>
+            </mat-grid-tile>
+          </mat-grid-list>
+    </div>
+    <div class="lowerdiv">
+        <div class="forms1" [style.display]="raise">
+            <mat-grid-list cols="1" rowHeight="100%">
+                <mat-grid-tile colspan="1">
+                  <form #userPost1="ngForm" enctype="multipart/form-data" method="POST" class="example-form" (ngSubmit)="checkform(userPost1)">
+                        
+                    <mat-label><input class="hindinputs"  type="text" name="teacher_name" [value]="name" [(ngModel)]="name" ></mat-label>
+ 
+
+                    <mat-form-field>
+                        <mat-label>STANDERD</mat-label>
+                        <mat-select matInput name="class_div"  #teams (selectionChange)="filterstand(teams.value)" ngModel>
+                          <ng-container >
+                         
+                            <mat-option value="1">1</mat-option>
+                            <mat-option value="2">2</mat-option>
+                            <mat-option value="3">3</mat-option>
+                            <mat-option value="4">4</mat-option>
+                            <mat-option value="5">5</mat-option>
+                            <mat-option value="6">6</mat-option>
+                            <mat-option value="7">7</mat-option>
+                            <mat-option value="8">8</mat-option>
+                            <mat-option value="9">9</mat-option>
+                            <mat-option value="10">10</mat-option>                        </ng-container>  
+                      </mat-select>
+                    </mat-form-field><br>
+                
+
+                    <mat-form-field>
+                        <mat-label>Choose a Name</mat-label>
+                        <mat-select matInput name="name" ngModel>
+                          <ng-container *ngFor="let item1 of filterdate; index as i" >
+                         
+                            <mat-option [value]="item1.name" >{{item1.name}}</mat-option>
+                        </ng-container>  
+                      </mat-select>
+                        
+                      </mat-form-field><br>
+
+                      <mat-form-field>
+                        <mat-label>Choose a date</mat-label>
+                        <input matInput name="date" [matDatepicker]="picker" ngModel>
+                        <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                        <mat-datepicker #picker ></mat-datepicker>
+                      </mat-form-field><br>
+
+                      <mat-form-field  class="mat-from">
+                        <mat-label >COMPLAINT</mat-label>
+                        <textarea matInput name="complaint" placeholder="Your complaint" ngModel></textarea>
+                      </mat-form-field><br>
+        
+                    <button mat-raised-button color="warn" value = "submit" type="submit"  class="buttonSlogin" >SUBMIT</button>
+        
+                </form>
+                </mat-grid-tile>
+              </mat-grid-list>
+        </div>
+
+
+
+
+
+        <div class="forms1" [style.display]="del">
+          <mat-grid-list cols="1" rowHeight="100%">
+              <mat-grid-tile colspan="1" >
+                <div class="listdiv">
+                  <ol class="list">
+                    <ng-container *ngFor="let item of TeacherFilterComp; index as i" >
+                      <li >
+                        <form #userPost="ngForm" enctype="multipart/form-data" method="POST" class="example-form" (ngSubmit)="deletefun(userPost.value)" >
+                          <div class="compLine">
+                              <div class="uperLine">
+                                <b class="NameDivDateSty">Name:-{{item.name}}</b>
+                                <b class="NameDivDateSty">
+                                  Complant Id:-
+                                  <input class="inputdipblock" matInput name="id" [(ngModel)]="item.id">
+                                  {{item.id}}
+                                </b>
+                                <b class="NameDivDateSty">Date:-{{item.date}}</b>
+         
+                              </div>
+                              <div class="lowerLine">
+                                <b class="CompSty">Complaint:-{{item.complaint}}</b>
+        
+                              </div>
+                              <button mat-fab class="Listbutton" color="warn" aria-label="Example icon button with a delete icon">
+                                 <mat-icon>delete</mat-icon>
+                              </button>
+                            </div>
+                        </form>                    
+                      </li>
+                    
+                    </ng-container>
+                    
+                  </ol>
+                
+                </div>
+                <!-- <div class="compLine">
+                  <div class="uperLine">
+                    <b class="NameDivDateSty">Name:-vinit patil</b>
+                    <b class="NameDivDateSty">RollNo/Div:-10</b>
+                    <b class="NameDivDateSty">Date:-2024-01-01</b>
+ 
+
+                  </div>
+                  <div class="lowerLine">
+                    <b class="CompSty">Complaint:-CSS are useful for providing explanations, making notes, or temporarily disabling </b>
+
+                  </div>
+                  <button mat-fab class="Listbutton" color="warn" aria-label="Example icon button with a delete icon">
+                    <mat-icon>delete</mat-icon>
+                  </button>
+                </div> -->
+
+
+                
+              </mat-grid-tile>
+            </mat-grid-list>
+      </div>
+</div>

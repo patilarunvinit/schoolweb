@@ -1,0 +1,96 @@
+.main{
+    width: 100%;
+    height: 100%;
+    position: absolute; 
+  }
+
+.uperdiv{
+    width: 100%;
+    height: 20%;  
+  }
+
+
+.lowerdiv{
+    width: 100%;
+    height: 80%;  
+    
+  }
+.optionbutton{
+    margin: 3px 0px 3px 0px;
+    width: 100%;
+    height: 100%;
+    background-color: rgb(194, 255, 137);
+}
+
+.optionbutton1{
+  margin: 3px 0px 3px 0px;
+  width: 100%;
+  height: 100%;
+  background-color: green;
+}
+.forms1{
+    width: 100%;
+    height: 100%;
+}
+
+.hindinputs{
+  display: none;
+}
+.listdiv{
+  width: 90%;
+  height: 100%;
+  overflow:auto;
+  position:relative;
+}
+.list{
+   width:100%;
+   margin: 10px 0px;
+   list-style-type: none; 
+}
+
+.compLine{
+  /* border: 2px solid red; */
+  width: 90%;
+  height: 60px;
+  background-color: green;
+  margin: 10px 0px ;
+  
+  
+  
+}
+.uperLine{
+  /* border: 2px solid black; */
+  width: 80%;
+  height: 30px;
+  padding: 5px 0px 0px 0px;
+}
+.lowerLine{
+   /* border: 2px solid yellow;  */
+  width: 80%;
+  height: 25px;
+}
+.NameDivDateSty{
+  margin: 0px 20px;
+}
+.CompSty{
+  width: 100%;
+  display: inline-block;
+  margin: 0px 10px;
+  white-space: nowrap; 
+  overflow: hidden; 
+  text-overflow: ellipsis;
+
+}
+
+.Listbutton{
+  float: right;
+  right: 15px;
+  top: -50px;
+  width: 7%;
+  height: 70%;
+
+}
+.inputdipblock{
+  display:none;
+}
+

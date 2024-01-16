@@ -1,3 +1,280 @@
-<div class="test1">
+
+<div class="ttmain">
     
+    <div class="uperdiv">
+        
+        <mat-grid-list cols="2" rowHeight="50%">
+            
+            <mat-grid-tile colspan="1" >
+                NAME:- <b>{{name}}</b>
+            </mat-grid-tile>
+
+            <mat-grid-tile colspan="1">
+                CLASS/DIV:-<b>{{class_div}}</b>
+                
+            </mat-grid-tile>
+            
+            <mat-grid-tile colspan="2">ATTENDANCE:-<b>{{percentageCAl['percentage']}}%</b></mat-grid-tile>
+            </mat-grid-list>
+    </div>
+
+    <div class="lowerdiv">
+        <mat-grid-list cols="1" rowHeight="100%" >
+            <mat-grid-tile colspan="1" class="test">
+                <div class="scrollclass"> 
+                    <table >
+                        <tr class="fixclass" >
+                            <th>DATES/MONTHS</th>
+                            <th>January</th>
+                            <th>February</th>
+                            <th>March</th>
+                            <th>April</th>
+                            <th>May</th>
+                            <th>June</th>
+                            <th>July</th>
+                            <th>August</th>
+                            <th>September</th>
+                            <th>October</th>
+                            <th>November</th>
+                            <th>December</th>
+                        
+                        </tr>
+                        <ng-container *ngFor="let item of list; index as i">
+                                <tr >
+                                    <td ><b>{{item}}</b></td>
+
+                                    {{isWeekend('2024-01-'+(i+1))}}
+                                    <td *ngIf="jan==true; else jan1" style="background-color: black;"></td>
+                                    <ng-template #jan1 >
+                                        <td>
+                                            <div>
+                                                <p *ngFor="let abcd of StudAttData; index as j">
+                                                    <b *ngIf="test('2024-01-'+(i+1))==abcd['date']; else att" >
+                                                        <b *ngIf="abcd['option']==true; else Fal">P
+                                                        </b>
+                                                        <ng-template #Fal><b style="color: red;">A</b></ng-template>
+                                                    </b>
+                                                    <ng-template #att></ng-template>
+
+                                                </p>
+                                            </div>
+                                        </td>
+
+                                    </ng-template>
+
+
+                                    
+                                    {{isWeekend('2024-02-'+(i+1))}}
+                                    <td *ngIf="feb==true; else feb1" style="background-color: black;"></td>
+                                    <ng-template #feb1>
+                                        <td>
+                                            <div>
+                                                <p *ngFor="let abcd of StudAttData; index as j">
+                                                    <b *ngIf="test('2024-02-'+(i+1))==abcd['date']; else att" >
+                                                        <b *ngIf="abcd['option']==true; else Fal">P
+                                                        </b>
+                                                        <ng-template #Fal><b style="color: red;">A</b></ng-template> 
+                                                    </b>
+                                                    <ng-template #att></ng-template>
+
+                                                </p>
+                                            </div>
+                                        </td>
+                                    </ng-template>
+                                    
+                                    {{isWeekend('2024-03-'+(i+1))}}
+                                    <td *ngIf="mar==true; else mar1" style="background-color: black;"></td>
+                                    <ng-template #mar1>
+                                        <td>
+                                            <div>
+                                                <p *ngFor="let abcd of StudAttData; index as j">
+                                                    <b *ngIf="test('2024-03-'+(i+1))==abcd['date']; else att" >
+                                                        <b *ngIf="abcd['option']==true; else Fal">P
+                                                        </b>
+                                                        <ng-template #Fal><b style="color: red;">A</b></ng-template>  
+                                                    </b>
+                                                    <ng-template #att></ng-template>
+
+                                                </p>
+                                            </div>
+                                        </td>
+                                    </ng-template>
+
+                                    {{isWeekend('2024-04-'+(i+1))}}
+                                    <td *ngIf="apr==true; else apr1" style="background-color: black;"></td>
+                                    <ng-template #apr1>
+                                        <td>
+                                            <div>
+                                                <p *ngFor="let abcd of StudAttData; index as j">
+                                                    <b *ngIf="test('2024-04-'+(i+1))==abcd['date']; else att" >
+                                                        <b *ngIf="abcd['option']==true; else Fal">P
+                                                        </b>
+                                                        <ng-template #Fal><b style="color: red;">A</b></ng-template> 
+                                                    </b>
+                                                    <ng-template #att></ng-template>
+
+                                                </p>
+                                            </div>
+                                        </td>
+                                    </ng-template>
+
+                                    {{isWeekend('2024-05-'+(i+1))}}
+                                    <td *ngIf="may==true; else may1" style="background-color: black;"></td>
+                                    <ng-template #may1>
+                                        <td>
+                                            <div>
+                                                <p *ngFor="let abcd of StudAttData; index as j">
+                                                    <b *ngIf="test('2024-05-'+(i+1))==abcd['date']; else att" >
+                                                        <b *ngIf="abcd['option']==true; else Fal">P
+                                                        </b>
+                                                        <ng-template #Fal><b style="color: red;">A</b></ng-template>  
+                                                    </b>
+                                                    <ng-template #att></ng-template>
+
+                                                </p>
+                                            </div>
+                                        </td>
+                                    </ng-template>
+
+                                    {{isWeekend('2024-06-'+(i+1))}}
+                                    <td *ngIf="jun==true; else jun1" style="background-color: black;"></td>
+                                    <ng-template #jun1>
+                                        <td>
+                                            <div>
+                                                <p *ngFor="let abcd of StudAttData; index as j">
+                                                    <b *ngIf="test('2024-06-'+(i+1))==abcd['date']; else att" >
+                                                        <b *ngIf="abcd['option']==true; else Fal">P
+                                                        </b>
+                                                        <ng-template #Fal><b style="color: red;">A</b></ng-template>  
+                                                    </b>
+                                                    <ng-template #att></ng-template>
+
+                                                </p>
+                                            </div>
+                                        </td>
+                                    </ng-template>
+
+                                    {{isWeekend('2024-07-'+(i+1))}}
+                                    <td *ngIf="jul==true; else jul1" style="background-color: black;"></td>
+                                    <ng-template #jul1>
+                                        <td>
+                                            <div>
+                                                <p *ngFor="let abcd of StudAttData; index as j">
+                                                    <b *ngIf="test('2024-07-'+(i+1))==abcd['date']; else att" >
+                                                        <b *ngIf="abcd['option']==true; else Fal">P
+                                                        </b>
+                                                        <ng-template #Fal><b style="color: red;">A</b></ng-template>  
+                                                    </b>
+                                                    <ng-template #att></ng-template>
+
+                                                </p>
+                                            </div>
+                                        </td>
+                                    </ng-template>
+
+                                    {{isWeekend('2024-08-'+(i+1))}}
+                                    <td *ngIf="aug==true; else aug1" style="background-color: black;"></td>
+                                    <ng-template #aug1>
+                                        <td>
+                                            <div>
+                                                <p *ngFor="let abcd of StudAttData; index as j">
+                                                    <b *ngIf="test('2024-08-'+(i+1))==abcd['date']; else att" >
+                                                        <b *ngIf="abcd['option']==true; else Fal">P
+                                                        </b>
+                                                        <ng-template #Fal><b style="color: red;">A</b></ng-template>  
+                                                    </b>
+                                                    <ng-template #att></ng-template>
+
+                                                </p>
+                                            </div>
+                                        </td>
+                                    </ng-template>
+                                    
+                                    {{isWeekend('2024-09-'+(i+1))}}
+                                    <td *ngIf="sept==true; else sept1" style="background-color: black;"></td>
+                                    <ng-template #sept1>
+                                        <td>
+                                            <div>
+                                                <p *ngFor="let abcd of StudAttData; index as j">
+                                                    <b *ngIf="test('2024-09-'+(i+1))==abcd['date']; else att" >
+                                                        <b *ngIf="abcd['option']==true; else Fal">P
+                                                        </b>
+                                                        <ng-template #Fal><b style="color: red;">A</b></ng-template> 
+                                                    </b>
+                                                    <ng-template #att></ng-template>
+
+                                                </p>
+                                            </div>
+                                        </td>
+                                    </ng-template>
+
+                                    {{isWeekend('2024-10-'+(i+1))}}
+                                    <td *ngIf="oct==true; else oct1" style="background-color: black;"></td>
+                                    <ng-template #oct1>
+                                        <td>
+                                            <div>
+                                                <p *ngFor="let abcd of StudAttData; index as j">
+                                                    <b *ngIf="test('2024-10-'+(i+1))==abcd['date']; else att" >
+                                                        <b *ngIf="abcd['option']==true; else Fal">P
+                                                        </b>
+                                                        <ng-template #Fal><b style="color: red;">A</b></ng-template>  
+                                                    </b>
+                                                    <ng-template #att></ng-template>
+
+                                                </p>
+                                            </div>
+                                        </td>
+                                    </ng-template>
+
+                                    {{isWeekend('2024-11-'+(i+1))}}
+                                    <td *ngIf="nov==true; else nov1" style="background-color: black;"></td>
+                                    <ng-template #nov1>
+                                        <td>
+                                            <div>
+                                                <p *ngFor="let abcd of StudAttData; index as j">
+                                                    <b *ngIf="test('2024-11-'+(i+1))==abcd['date']; else att" >
+                                                        <b *ngIf="abcd['option']==true; else Fal">P
+                                                        </b>
+                                                        <ng-template #Fal><b style="color: red;">A</b></ng-template>  
+                                                    </b>
+                                                    <ng-template #att></ng-template>
+
+                                                </p>
+                                            </div>
+                                        </td>
+                                    </ng-template>
+
+                                    {{isWeekend('2024-12-'+(i+1))}}
+                                    <td *ngIf="des==true; else des1" style="background-color: black;"></td>
+                                    <ng-template #des1>
+                                        <td>
+                                            <div>
+                                                <p *ngFor="let abcd of StudAttData; index as j">
+                                                    <b *ngIf="test('2024-12-'+(i+1))==abcd['date']; else att" >
+                                                        <b *ngIf="abcd['option']==true; else Fal">P
+                                                        </b>
+                                                        <ng-template #Fal><b style="color: red;">A</b></ng-template>  
+                                                    </b>
+                                                    <ng-template #att></ng-template>
+
+                                                </p>
+                                            </div>
+                                        </td>
+                                    </ng-template>
+
+                        </tr>
+                                               
+
+                        </ng-container>
+                            
+                        
+                        
+                    
+                    </table>
+        
+                </div>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </div>
+
 </div>

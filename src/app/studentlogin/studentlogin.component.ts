@@ -29,6 +29,10 @@ export class StudentloginComponent {
   address:any;
   image:any;
   fregment:any;
+  colourI:any;
+  colourT:any;
+  colourA:any;
+  colourB:any;
  
   
   
@@ -37,7 +41,8 @@ export class StudentloginComponent {
   constructor (
     private router:Router,
     private location: Location,
-    private http:HttpClient){
+    private http:HttpClient,
+    private Router:Router,){
       
     }
  
@@ -51,7 +56,10 @@ export class StudentloginComponent {
       this.ttdiv='none';
       this.attdiv='none';
       this.infodiv='block';
-      
+      this.colourI='rgb(84, 115, 255)';
+      this.colourT='skyblue';
+      this.colourA='skyblue';   
+      this.colourB='skyblue';  
       
       
 
@@ -61,15 +69,34 @@ export class StudentloginComponent {
       this.infodiv='none';
       this.attdiv='none';
       this.ttdiv='block';
+      this.colourI='skyblue';
+      this.colourT='rgb(84, 115, 255)';
+      this.colourA='skyblue';   
+      this.colourB='skyblue'; 
     }
     else if (this.fregment=="attandance"){
       this.router.navigateByUrl('slogin#'+ this.fregment);
       this.infodiv='none';
       this.attdiv='block';
       this.ttdiv='none';
+      this.colourI='skyblue';
+      this.colourT='skyblue';
+      this.colourA='rgb(84, 115, 255)';   
+      this.colourB='skyblue'; 
     }
  
   }
+
+
+
+  key="data"
+
+  logout(){
+       
+    sessionStorage.removeItem(this.key)
+    this.Router.navigate([''])
+  }
+
 
   dp:string="assets/img/dp.jpg"
   

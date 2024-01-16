@@ -4,12 +4,12 @@
     <div class="uperdiv">
         <mat-grid-list cols="2" rowHeight="75%">
             <mat-grid-tile colspan="1">
-                <button class="optionbutton" type="button" mat-button (click)="optionbu('give')">
-                    GIVE ATTENDANCE
+                <button class="optionbutton1"  [style.background-color]="colourG" type="button" mat-button (click)="optionbu('give')" >
+                  GIVE ATTENDANCE
                 </button>
-            </mat-grid-tile>
+                </mat-grid-tile>
             <mat-grid-tile>
-                <button class="optionbutton" type="button" mat-button (click)="optionbu('myatt')">
+                <button class="optionbutton" [style.background-color]="colourC" type="button" mat-button (click)="optionbu('myatt')">
                     CHECK ATTENDANCE
                 </button>
             </mat-grid-tile>
@@ -17,10 +17,8 @@
     </div>
 
     <div class="lowerdiv">
-      <app-logout></app-logout>
-
-
-
+     
+      
         <div class="forms1" [style.display]="give">
             <mat-grid-list cols="1" rowHeight="100%">
                 <mat-grid-tile colspan="1">

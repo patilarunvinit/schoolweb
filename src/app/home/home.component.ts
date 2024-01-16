@@ -51,7 +51,16 @@ export class HomeComponent {
     private route: ActivatedRoute,
     private cookieService: CookieService )
     {}
+
+  screenWidth:any;
+  screenHeight:any;
   ngOnInit(){
+
+
+    this.screenWidth = window.innerWidth;
+    this.screenHeight = window.innerHeight;
+
+
     this.width = (window.innerWidth) ;
     if(this.width<=600){
       this.cols="1";
@@ -128,7 +137,7 @@ export class HomeComponent {
 
 
   nav(fregment:any){
-    this.Router.navigateByUrl('home#'+ fregment)
+    this.Router.navigateByUrl('#'+ fregment)
  
   }
 

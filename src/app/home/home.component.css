@@ -146,11 +146,17 @@
 .videoindiv2{
     width: 100%;
     height: 57%;
+    top:190px;
     position: absolute;
 }
 .vdiv2in1{
     width: 60%;
     height: 100%;
+}
+.videomainwidth{
+    width: 100%;
+    min-height: 100%;
+    
 }
 .vdiv2in2{
     width: 40%;
@@ -247,6 +253,7 @@
 }
 .erpdivintile:hover .sterp{
     filter: blur(7px);
+   
 
 }
 .erpdivintile:hover .erph3{
@@ -592,13 +599,192 @@
 }
 
 
+/* 
+@media only screen and (min-width:1130px) {
+    
+    
+    .videomainwidth{
+        height:120%;
+    }
+    .videoindiv2{
+        top:219px;
+       
+    }
+
+
+    .erpmain{
+        
+        top:300px;
+    }
+
+
+
+    .aboutmain{
+        top:380px;
+        
+    }
+
+
+    .footh1{
+        left:120px;
+    }
+
+
+    .footcontact{
+        left: 60px;
+    }
+
+}
+
+
+
+@media only screen and (min-width:1275px) {
+    
+    
+    .videomainwidth{
+        height: 130%;
+    }
+    .videoindiv2{
+        top:243px;
+       
+    }
+
+    .erpmain{
+        
+        top:320px;
+    }
+
+    .aboutmain{
+        top:400px;
+        
+    }
+
+
+    .footh1{
+        left:130px;
+    }
+
+    .footcontact{
+        left: 100px;
+    }
+
+
+}
+
+@media only screen and (min-width:1360px) {
+    
+    
+    .videomainwidth{
+        height: 140%;
+    }
+    .videoindiv2{
+        top:259px;
+       
+    }
+
+    .erpmain{
+        
+        top:340px;
+    }
+
+    .aboutmain{
+        top:420px;
+        
+    }
+
+
+    .footh1{
+        left:140px;
+    }
+
+
+
+
+    .footcontact{
+        left: 100px;
+    }
+
+}
+
+
+
+@media only screen and (min-width:1530px) {
+    
+    
+    .videomainwidth{
+        height: 150%;
+    }
+    .videoindiv2{
+        top:285px;
+       
+    }
+
+
+    .erpmain{
+        
+        top:360px;
+    }
+
+
+    .aboutmain{
+        top:440px;
+        
+    }
+
+
+    .footh1{
+        left:150px;
+    }
+
+
+    .footcontact{
+        left: 140px;
+    }
+
+}
+
+
+
+@media only screen and (min-width:2043px) {
+    
+    
+    .videomainwidth{
+        height: 210%;
+    }
+    .videoindiv2{
+        top:392px;
+       
+    }
+
+
+    .videomain{
+        top: 400px;
+    }
+
+
+
+    .erpmain{
+        
+        top:580px;
+    }
+
+
+
+
+    .aboutmain{
+        top:630px;
+        
+    }
+
+
+}
+ */
+
+
+
 
 @media only screen and (max-width:600px) {
 
-    
-      
-
-    
 .backp{    
     height: 350px;        
     

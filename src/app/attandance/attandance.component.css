@@ -1,5 +1,63 @@
-.test1{
-    width: 100%;
-    height: 100%;
-    border: 2px solid red;
+
+
+.ttmain{
+  width: 100%;
+  height: 100%;
+  position: absolute; 
+  
+}
+.uperdiv{
+  width: 100%;
+  height: 20%;  
+}
+.lowerdiv{
+  top:23%;
+  width: 100%;
+  height: 70%;
+  overflow:auto;  
+  position: absolute;
+  
+}
+
+
+
+mat-grid-tile {
+  background: lightblue;
+}
+
+
+
+table, th, td,.test {
+    border:1px solid rgb(173, 173, 173);
+    height: 25px;
+    text-align: center;
+    border-collapse: collapse;
+  }
+th{
+  height: 60px;
+  width: 100px;
+  background-color: black;
+  color: white;
+}
+td,.test{
+  background-color: skyblue;
+}
+.test{
+  
+}
+
+
+
+.scrollclass{
+  width: 100%;
+  height: 100%;
+  overflow:auto;
+  position:relative;
+   
+    
+}
+
+.scrollclass th{
+  position: sticky;
+  top: 0;
 }

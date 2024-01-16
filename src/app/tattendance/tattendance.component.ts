@@ -53,6 +53,9 @@ export class TattendanceComponent {
   filterClass:any;
   filterdate:any;
   attandS:any;
+  colourG:any;
+  colourC:any;
+
 
   
 
@@ -86,7 +89,8 @@ export class TattendanceComponent {
       this.router.navigateByUrl('tlogin#'+ fregment);
       this.give='block';
       this.myatt='none';  
-      
+      this.colourG='green';
+      this.colourC='rgb(194, 255, 137)';      
       
 
     }
@@ -94,6 +98,8 @@ export class TattendanceComponent {
       this.router.navigateByUrl('tlogin#'+ fregment);
       this.give='none';
       this.myatt='block';
+      this.colourG='rgb(194, 255, 137)';
+      this.colourC='green'; 
     }
   }
 
@@ -118,7 +124,8 @@ export class TattendanceComponent {
     console.log(this.date);
     this.give='none';
     this.studinfo='block';
-    this.attandS='none'  
+    this.attandS='none'
+     
   }
 
 
@@ -138,8 +145,10 @@ export class TattendanceComponent {
     this.http.post("http://127.0.0.1:8000/attandForS/", this.data123)
     .subscribe((res:any)=>{
       this.massage=res.massage
+      alert(this.massage)
       
-      if (this.massage="data pass"){
+      
+      if (this.massage=="data pass"){
         alert(this.massage)
         this.give='block';
         this.studinfo='none'; 
