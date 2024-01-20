@@ -4,6 +4,7 @@ import {HomeComponent } from './home/home.component';
 import {StudentloginComponent } from './studentlogin/studentlogin.component';
 import {SadminComponent } from './sadmin/sadmin.component';
 import {TeacherloginComponent } from './teacherlogin/teacherlogin.component';
+//import {TimetableComponent } from './timetable/timetable.component';
 
 
 
@@ -19,6 +20,7 @@ const routes: Routes = [
 const routerOptions: ExtraOptions={
   scrollPositionRestoration:'enabled',
   anchorScrolling:'enabled',
+  //useHash: true,
 }
 
 @NgModule({

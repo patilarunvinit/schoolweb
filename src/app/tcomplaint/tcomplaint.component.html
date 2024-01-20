@@ -21,7 +21,8 @@
                   <form #userPost1="ngForm" enctype="multipart/form-data" method="POST" class="example-form" (ngSubmit)="checkform(userPost1)">
                         
                     <mat-label><input class="hindinputs"  type="text" name="teacher_name" [value]="name" [(ngModel)]="name" ></mat-label>
- 
+                    <mat-label><input class="hindinputs"  type="text" name="mobile_no" [value]="mobile_no" [(ngModel)]="mobile_no" ></mat-label>
+
 
                     <mat-form-field>
                         <mat-label>STANDERD</mat-label>
@@ -111,25 +112,7 @@
                   </ol>
                 
                 </div>
-                <!-- <div class="compLine">
-                  <div class="uperLine">
-                    <b class="NameDivDateSty">Name:-vinit patil</b>
-                    <b class="NameDivDateSty">RollNo/Div:-10</b>
-                    <b class="NameDivDateSty">Date:-2024-01-01</b>
- 
-
-                  </div>
-                  <div class="lowerLine">
-                    <b class="CompSty">Complaint:-CSS are useful for providing explanations, making notes, or temporarily disabling </b>
-
-                  </div>
-                  <button mat-fab class="Listbutton" color="warn" aria-label="Example icon button with a delete icon">
-                    <mat-icon>delete</mat-icon>
-                  </button>
-                </div> -->
-
-
-                
+                                
               </mat-grid-tile>
             </mat-grid-list>
       </div>

@@ -61,3 +61,7 @@ td,.test{
   position: sticky;
   top: 0;
 }
+
+.makesamesizeTD{
+  margin: 0px;
+}

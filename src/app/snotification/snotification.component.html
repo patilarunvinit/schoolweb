@@ -1,0 +1,82 @@
+<div class="ttmain">
+    
+    <div class="uperdiv">
+        
+        <mat-grid-list cols="1" rowHeight="50%">
+            
+            <mat-grid-tile colspan="1" class="test" >
+                NAME:- <b>{{name}}</b>
+                
+            </mat-grid-tile>
+            <mat-grid-tile class="test">
+                CLASS/DIV:-<b>{{class_div}}</b>
+            </mat-grid-tile>
+        </mat-grid-list>
+    </div>
+   
+    <div class="forms1">
+        <mat-grid-list cols="1" rowHeight="100%" >
+            <mat-grid-tile colspan="1" >
+              <div class="listdiv">
+                <ol class="list" >
+                  <ng-container *ngFor="let item of TeacherFilterComp; index as i" >
+                    <li (click)="popupON(item.id)">
+                      
+                        <div class="compLine">
+                            <div class="uperLine">
+                              <b class="NameDivDateSty">Name:-{{item.name}}</b>
+                              <b class="NameDivDateSty">
+                                Complant Id:-
+                                {{item.id}}
+                              </b>
+                              <b class="NameDivDateSty">Date:-{{item.date}}</b>
+       
+                            </div>
+                            <div class="lowerLine">
+                              <b class="CompSty">Complaint:-{{item.complaint}}</b>
+      
+                            </div>
+                            <div class="Listbutton" >
+                               <mat-icon class="iconClass">query_builder</mat-icon >{{test(item.complaint_date1)}}
+                            </div>
+                          </div>
+                                         
+                    </li>
+                  
+                  </ng-container>
+                  
+                </ol>
+              
+              </div>
+                              
+            </mat-grid-tile>
+          </mat-grid-list>
+
+          <div class="infodiv" [style.display]="popupdiv">
+            <div class="closebdiv">
+                <mat-icon (click)="close1()"  class="closebutton">clear</mat-icon>       
+            </div>
+                <div class="infolowerdiv">
+                <h1 class="textpopup">Teacher Name:-<b> {{tNameP}}</b></h1>
+                <h1 class="textpopup">Mobile No:-<b>{{mobile_no}} </b></h1>
+                <h1 class="textpopup">Meet Date:-<b> {{dateP}}</b></h1>
+                <h1 class="textpopup">Complaint Id:-<b>{{idP}}</b></h1>
+                <h1 class="complpopup">Complaint:-
+                  <b >
+                    {{complaintP}}
+                  </b>
+                </h1>
+            
+                <div class="timepopup">
+                  <mat-icon class="iconClass">query_builder</mat-icon>
+                  {{agotime}} 
+                </div>
+           
+
+            </div>
+
+            </div>
+          </div>
+    
+</div>
+

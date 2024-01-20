@@ -1,0 +1,137 @@
+.ttmain{
+    width: 100%;
+    height: 100%;
+    position: absolute; 
+    
+  }
+  .uperdiv{
+    width: 100%;
+    height: 20%;
+    
+  }
+  .lowerdiv{
+    width: 100%;
+    height: 80%; 
+        
+    
+  }
+  .test {
+    background: lightblue;
+  }
+
+
+
+  .forms1{
+    width: 100%;
+    height: 100%;
+}
+
+.listdiv{
+  width: 90%;
+  height: 100%;
+  overflow:auto;
+  position:relative;
+}
+.list{
+   width:100%;
+   margin: 10px 0px;
+   list-style-type: none; 
+}
+.compLine{
+  /* border: 2px solid red; */
+  width: 90%;
+  height: 60px;
+  background-color: rgb(84, 115, 255);
+  margin: 10px 0px ;
+  
+  
+  
+}
+.uperLine{
+  /* border: 2px solid black; */
+  width: 80%;
+  height: 30px;
+  padding: 5px 0px 0px 0px;
+}
+.lowerLine{
+   /* border: 2px solid yellow;  */
+  width: 80%;
+  height: 25px;
+  position: relative;
+}
+.NameDivDateSty{
+  margin: 0px 20px;
+}
+.CompSty{
+  width: 100%;
+  display: inline-block;
+  margin: 0px 10px;
+  white-space: nowrap; 
+  overflow: hidden; 
+  text-overflow: ellipsis;
+
+}
+
+.Listbutton{
+  position: relative;
+  float: right;
+  right: 15px;
+  top: -30px;
+  width: 15%;
+  height: 70%;
+
+}
+.inputdipblock{
+  display:none;
+}
+
+.iconClass{
+  font-size: 18px;
+  bottom: 0px;
+  margin: -10px 0px;
+  
+}
+
+
+.infodiv{
+  position:absolute;
+  top:50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 60%;
+  height: 80%;
+  border-radius: 10px;
+  background-color:rgb(84, 115, 255);
+
+  display: none; 
+  
+}
+.closebdiv{
+  width: 100%;
+  height: 10%;
+}
+.closebutton{
+  transform: scale(1.5);
+  float:right;
+  margin: 15px 20px;
+}
+
+.infolowerdiv{
+  width: 100%;
+  height: 87%;
+}
+
+.timepopup{
+  position: absolute;
+  right: 10px;
+  bottom: 20px;
+  
+}
+.textpopup{
+  margin: 20px 25px;
+}
+.complpopup{
+  margin: 20px 25px;
+  height: 38%;
+  overflow: auto;
+}

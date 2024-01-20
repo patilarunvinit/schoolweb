@@ -13,6 +13,19 @@
                 ATTANDANCE
             </button>
 
+            <button class="navbutton" [style.background-color]="colourN" type="button" mat-button (click)="mainnav('notification')" >
+                <div class="notification-icon">
+                    NOTIFICATION
+                    <img class="notlogo" [src]=notificationImg alt="Notification Icon">
+                    <b *ngIf="notificationCount==0; else Fal">
+                    </b>
+                    <ng-template #Fal>
+                        <span class="notification-badge">{{notificationCount}}</span>
+
+                    </ng-template>
+                  </div>
+            </button>
+
             <button class="navbutton" [style.background-color]="colourB" type="button" mat-button (click)="logout()">
                 LOGOUT
             </button>
@@ -27,6 +40,7 @@
             <app-info id="info" [style.display]="infodiv"></app-info>
             <app-timetable id="timetable" [style.display]="ttdiv"></app-timetable>
             <app-attandance id="attandance" [style.display]="attdiv"></app-attandance>
+            <app-snotification id="notification" [style.display]="notdiv"></app-snotification>
 
         </div>
         

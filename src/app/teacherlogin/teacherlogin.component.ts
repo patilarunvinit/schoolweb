@@ -1,6 +1,10 @@
 import { Component } from '@angular/core';
 import {Router} from '@angular/router' 
 
+import { Location } from '@angular/common';
+import { ActivatedRoute } from '@angular/router';
+
+
 @Component({
   selector: 'app-teacherlogin',
   templateUrl: './teacherlogin.component.html',
@@ -21,14 +25,57 @@ export class TeacherloginComponent {
   colourL:any;
 
   constructor (private router:Router,
-    private Router:Router,){
+    private location: Location,
+    private Router:Router,   
+    private route: ActivatedRoute,){
     
     
   }
 
-  mainnav(fregment:any){
-    if(fregment=="tinfo"){
-      this.router.navigateByUrl('tlogin#'+ fregment);
+
+  ngOnInit() {
+    this.route.fragment.subscribe((fragment123: any) => {
+      //alert(fragment123)
+      if(fragment123=="tinfo"){
+        this.navigateToFragment('tinfo');
+        this.comdiv='none';
+        this.infodiv='block';
+        this.tattan='none';
+        this.colourI='green';
+        this.colourC='rgb(194, 255, 137)';
+        this.colourA='rgb(194, 255, 137)';
+        this.colourL='rgb(194, 255, 137)';
+        
+        
+  
+      }
+      else if (fragment123=="attendance"){
+        this.navigateToFragment('attendance');
+        this.infodiv='none';
+        this.comdiv='none';
+        this.tattan='block';
+        this.colourI='rgb(194, 255, 137)';
+        this.colourC='rgb(194, 255, 137)';
+        this.colourA='green';
+        this.colourL='rgb(194, 255, 137)';
+      }
+      else if (fragment123=="tcomplaint"){
+        this.navigateToFragment('tcomplaint');
+        this.infodiv='none';
+        this.comdiv='block';
+        this.tattan='none'
+        this.colourI='rgb(194, 255, 137)';
+        this.colourC='green';
+        this.colourA='rgb(194, 255, 137)';
+        this.colourL='rgb(194, 255, 137)';
+      }
+    });
+  }
+
+
+  mainnav(fragment:any){
+    if(fragment=="tinfo"){
+      this.navigateToFragment('tinfo');
       this.comdiv='none';
       this.infodiv='block';
       this.tattan='none';
@@ -40,8 +87,8 @@ export class TeacherloginComponent {
       
 
     }
-    else if (fregment=="attendance"){
-      this.router.navigateByUrl('tlogin#'+ fregment);
+    else if (fragment=="attendance"){
+      this.navigateToFragment('attendance');
       this.infodiv='none';
       this.comdiv='none';
       this.tattan='block';
@@ -50,8 +97,8 @@ export class TeacherloginComponent {
       this.colourA='green';
       this.colourL='rgb(194, 255, 137)';
     }
-    else if (fregment=="tcomplaint"){
-      this.router.navigateByUrl('tlogin#'+ fregment);
+    else if (fragment=="tcomplaint"){
+      this.navigateToFragment('tcomplaint');
       this.infodiv='none';
       this.comdiv='block';
       this.tattan='none'
@@ -61,6 +108,18 @@ export class TeacherloginComponent {
       this.colourL='rgb(194, 255, 137)';
     }
  
+ 
+  }
+
+  navigateToFragment(fragment: string): void {
+    this.location.replaceState('tlogin', '#' + fragment);
+    //this.router.navigate(['/tlogin'], { fragment: this.fregment });
+    //this.location.go(`/tlogin#${fragment}`);
+    //location.hash = fragment;
+  }
+  reloadCurrentRoute() {
+    location.reload();
+    
   }
 
 

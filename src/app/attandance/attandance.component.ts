@@ -42,6 +42,7 @@ export class AttandanceComponent {
   b:any;
   c:any;
   percentageCAl:any;
+  percentage:any;
   x:any;
   y:any;
   key="data"
@@ -73,6 +74,7 @@ export class AttandanceComponent {
    this.http.get("http://127.0.0.1:8000/percentageCAl/?name="+this.name+"&class_div="+this.class_div )
    .subscribe((result)=>{
       this.percentageCAl=result;
+      this.percentage=this.percentageCAl['percentage']
    }) 
    
 

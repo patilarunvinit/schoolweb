@@ -31,6 +31,7 @@ export class TcomplaintComponent {
   tName:any;
   filterClass:any;
   TeacherFilterComp:any;
+  mobile_no:any;
   
 constructor (private router:Router,private http:HttpClient ){
     this.b= sessionStorage.getItem(this.key) || "";
@@ -38,6 +39,7 @@ constructor (private router:Router,private http:HttpClient ){
     this.data=JSON.parse(this.a)
     this.name=this.data[0]['name']
     this.tName=this.name;
+    this.mobile_no=this.data[0]['mobile_no']
 
     this.http.get("http://127.0.0.1:8000/tfilterstand/?name="+this.tName )
     .subscribe((result)=>{

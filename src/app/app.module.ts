@@ -40,6 +40,7 @@ import { RouterModule, Routes, ExtraOptions } from '@angular/router';
 import {CookieService} from 'ngx-cookie-service';
 import { LogoutComponent } from './logout/logout.component';
 import { TcomplaintComponent } from './tcomplaint/tcomplaint.component';
+import { SnotificationComponent } from './snotification/snotification.component';
 
 
 @NgModule({
@@ -56,7 +57,8 @@ import { TcomplaintComponent } from './tcomplaint/tcomplaint.component';
     TinfoComponent,
     TattendanceComponent,
     LogoutComponent,
-    TcomplaintComponent
+    TcomplaintComponent,
+    SnotificationComponent
   ],
   imports: [
     BrowserModule,
