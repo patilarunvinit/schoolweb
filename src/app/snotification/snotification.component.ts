@@ -24,6 +24,7 @@ export class SnotificationComponent {
   hoursPassed: any;
   minutesPassed: any;
   agotime:any;
+  filtervalue:any;
 
 
   
@@ -64,7 +65,8 @@ export class SnotificationComponent {
     }) 
   }
   close1(){
-    this.popupdiv="none"
+    this.popupdiv="none";
+    this.filtervalue="none";
   }
 
  
@@ -123,7 +125,8 @@ export class SnotificationComponent {
 
       } 
     }
-    this.popupdiv="block"
+    this.popupdiv="block";
+    this.filtervalue="blur(5px)";
     
   }
 }

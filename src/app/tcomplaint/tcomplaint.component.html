@@ -3,12 +3,12 @@
     <div class="uperdiv">
         <mat-grid-list cols="2" rowHeight="75%">
             <mat-grid-tile colspan="1">
-                <button class="optionbutton1"  [style.background-color]="colourR" type="button" mat-button (click)="optionbu('give')" >
-                  RAISE COMPLAINT
+                <button class="optionbutton1"  [style.background-color]="colourR" type="button" mat-button (click)="optionbu('raise')" >
+                  RAISE COMPLAINT 
                 </button>
                 </mat-grid-tile>
             <mat-grid-tile>
-                <button class="optionbutton" [style.background-color]="colourD" type="button" mat-button (click)="optionbu('myatt')">
+                <button class="optionbutton" [style.background-color]="colourD" type="button" mat-button (click)="optionbu('del')">
                     DElETE COMPLAINT
                 </button>
             </mat-grid-tile>
@@ -24,8 +24,8 @@
                     <mat-label><input class="hindinputs"  type="text" name="mobile_no" [value]="mobile_no" [(ngModel)]="mobile_no" ></mat-label>
 
 
-                    <mat-form-field>
-                        <mat-label>STANDERD</mat-label>
+                    <mat-form-field class="STANDwidth">
+                        <mat-label class="STANDwidth">STANDERD</mat-label>
                         <mat-select matInput name="class_div"  #teams (selectionChange)="filterstand(teams.value)" ngModel>
                           <ng-container >
                          
@@ -43,8 +43,8 @@
                     </mat-form-field><br>
                 
 
-                    <mat-form-field>
-                        <mat-label>Choose a Name</mat-label>
+                    <mat-form-field class="STANDwidth">
+                        <mat-label class="STANDwidth">Choose a Name</mat-label>
                         <mat-select matInput name="name" ngModel>
                           <ng-container *ngFor="let item1 of filterdate; index as i" >
                          
@@ -54,19 +54,23 @@
                         
                       </mat-form-field><br>
 
-                      <mat-form-field>
-                        <mat-label>Choose a date</mat-label>
+                      <mat-form-field class="STANDwidth">
+                        <mat-label class="STANDwidth">Choose a date</mat-label>
                         <input matInput name="date" [matDatepicker]="picker" ngModel>
                         <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
                         <mat-datepicker #picker ></mat-datepicker>
                       </mat-form-field><br>
 
-                      <mat-form-field  class="mat-from">
-                        <mat-label >COMPLAINT</mat-label>
+                      <mat-form-field  class="mat-from" class="STANDwidth">
+                        <mat-label class="STANDwidth">COMPLAINT</mat-label>
                         <textarea matInput name="complaint" placeholder="Your complaint" ngModel></textarea>
                       </mat-form-field><br>
         
-                    <button mat-raised-button color="warn" value = "submit" type="submit"  class="buttonSlogin" >SUBMIT</button>
+                    <button value = "submit" type="submit"  class="buttonSlogin" >
+                      <span class="front">
+                        SUBMITE
+                      </span>
+                    </button>
         
                 </form>
                 </mat-grid-tile>
@@ -84,7 +88,7 @@
                   <ol class="list">
                     <ng-container *ngFor="let item of TeacherFilterComp; index as i" >
                       <li >
-                        <form #userPost="ngForm" enctype="multipart/form-data" method="POST" class="example-form" (ngSubmit)="deletefun(userPost.value)" >
+                        <form #userPost="ngForm" enctype="multipart/form-data" method="POST"  (ngSubmit)="deletefun(userPost.value)" >
                           <div class="compLine">
                               <div class="uperLine">
                                 <b class="NameDivDateSty">Name:-{{item.name}}</b>

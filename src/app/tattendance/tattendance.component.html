@@ -24,9 +24,9 @@
                 <mat-grid-tile colspan="1">
                     <form #userPost="ngForm" enctype="multipart/form-data" method="POST" class="example-form" (ngSubmit)="giveform(userPost.value)">
                         
-                        <mat-form-field>
-                            <mat-label>STANDERD</mat-label>
-                            <mat-select matInput name="standerd" ngModel>
+                        <mat-form-field class="STANDwidth">
+                            <mat-label class="STANDwidth">STANDERD</mat-label>
+                            <mat-select  matInput name="standerd" ngModel>
                               <mat-option value="1">1</mat-option>
                               <mat-option value="2">2</mat-option>
                               <mat-option value="3">3</mat-option>
@@ -48,7 +48,11 @@
                             <mat-datepicker #picker ></mat-datepicker>
                           </mat-form-field><br>
             
-                        <button mat-raised-button color="warn" value = "submit" type="submit"  class="buttonSlogin" >NEXT</button>
+                        <button value = "submit" type="submit"  class="buttonSlogin" >
+                          <span class="front">
+                            NEXT
+                          </span>
+                        </button>
             
                     </form>
                 </mat-grid-tile>
@@ -87,7 +91,11 @@
                         
                       </mat-form-field><br>
         
-                    <button mat-raised-button color="warn" value = "submit" type="submit"  class="buttonSlogin" >NEXT</button>
+                    <button value = "submit" type="submit"  class="buttonSlogin" >
+                      <span class="front">
+                        NEXT
+                      </span>
+                    </button>
         
                 </form>
                 </mat-grid-tile>

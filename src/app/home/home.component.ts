@@ -3,7 +3,7 @@ import {HttpClient} from '@angular/common/http';
 
 import {Router} from '@angular/router' 
 import {ActivatedRoute} from '@angular/router';
-
+import { NgForm } from '@angular/forms';
 
 
 
@@ -172,10 +172,6 @@ export class HomeComponent {
     
     )  
     
-   
-    
-   
-
   }
 
 
@@ -206,6 +202,49 @@ export class HomeComponent {
 
   }
 
+
+
+  contactfrom(datamain:NgForm){
+    const data2 = datamain.value;
+    console.log(data2)
+    if(data2.name=="" && data2.email=="" && data2.massage==""){
+      alert("Data empty")
+
+    }
+    else if(data2.name=="") {
+      alert("Name Empty")
+      
+    }
+    else if( data2.valid) {
+      alert("Email Empty")
+      
+    }
+    else if( data2.massage=="") {
+      alert("Massage Empty")
+      
+    }
+    else {
+      this.http.post("http://127.0.0.1:8000/contact/", data2)
+      .subscribe((res:any)=>{
+        this.massage=res.massage
+        alert(this.massage)
+        
+        
+        if (this.massage=="data pass"){
+          alert(this.massage)
+           
+        }
+        else{
+          alert(this.massage)
+        }
+      },
+      )  
+        
+        datamain.reset();
+      
+      
+    }
+  }
 
 
   backphoto:string="assets/img/back.jpg"

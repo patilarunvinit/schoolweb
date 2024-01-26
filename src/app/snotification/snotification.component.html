@@ -22,18 +22,17 @@
                   <ng-container *ngFor="let item of TeacherFilterComp; index as i" >
                     <li (click)="popupON(item.id)">
                       
-                        <div class="compLine">
+                        <div class="compLine" [style.filter]="filtervalue">
                             <div class="uperLine">
-                              <b class="NameDivDateSty">Name:-{{item.name}}</b>
+                              <b class="NameDivDateSty">Complaint From:- {{item.teacher_name}}</b>
                               <b class="NameDivDateSty">
                                 Complant Id:-
                                 {{item.id}}
                               </b>
-                              <b class="NameDivDateSty">Date:-{{item.date}}</b>
        
                             </div>
                             <div class="lowerLine">
-                              <b class="CompSty">Complaint:-{{item.complaint}}</b>
+                              <b class="NameDivDateSty">Class/Div:-{{item.class_div}}</b>
       
                             </div>
                             <div class="Listbutton" >

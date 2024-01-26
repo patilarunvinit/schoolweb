@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,Input } from '@angular/core';
 import {Router} from '@angular/router'
 import {HttpClient} from '@angular/common/http';
 import {FormGroup, FormControl} from '@angular/forms';
@@ -57,6 +57,7 @@ export class TattendanceComponent {
   attandS:any;
   colourG:any;
   colourC:any;
+  @Input() DataToInputforMyatt: any | undefined;
 
 
   
@@ -86,6 +87,18 @@ export class TattendanceComponent {
     return CryptoJS.AES.decrypt(txtToDecrypt, this.key).toString(CryptoJS.enc.Utf8);
   }
 
+ 
+  ngOnInit():void{
+    console.log(this.DataToInputforMyatt)
+     this.give=this.DataToInputforMyatt['give'];
+     this.myatt=this.DataToInputforMyatt['myatt'];
+      this.colourG=this.DataToInputforMyatt['colourG'];
+      this.colourC=this.DataToInputforMyatt['colourC']
+  
+   
+  }
+
+
   optionbu(fregment:any){
     if(fregment=="give"){
       this.router.navigateByUrl('tlogin#'+ fregment);
@@ -105,7 +118,7 @@ export class TattendanceComponent {
     }
   }
 
-  aa:any;
+ 
   giveform(data1:any) {
     console.log(data1);
 
@@ -121,9 +134,14 @@ export class TattendanceComponent {
 
     /*this for date to pass */
     this.date=data1.date
-    this.aa = this.date.toISOString();
-    this.maindate=this.aa.slice(0,10);
-    console.log(this.date);
+    if (this.date) {
+      const dateObject = new Date(this.date);
+      const offsetMinutes = dateObject.getTimezoneOffset();
+      const adjustedDate = new Date(dateObject.getTime() - offsetMinutes * 60 * 1000);
+      this.maindate=adjustedDate.toISOString().substring(0, 10)
+    } 
+
+
     this.give='none';
     this.studinfo='block';
     this.attandS='none'

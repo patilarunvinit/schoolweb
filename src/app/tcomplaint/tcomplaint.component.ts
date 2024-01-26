@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component,Input } from '@angular/core';
 import {Router} from '@angular/router';
 import {HttpClient} from '@angular/common/http';
 import { NgForm } from '@angular/forms';
@@ -32,6 +32,8 @@ export class TcomplaintComponent {
   filterClass:any;
   TeacherFilterComp:any;
   mobile_no:any;
+  @Input() DataToInput: any | undefined;
+  
   
 constructor (private router:Router,private http:HttpClient ){
     this.b= sessionStorage.getItem(this.key) || "";
@@ -50,11 +52,21 @@ constructor (private router:Router,private http:HttpClient ){
   
     this.TeachersComAPI()
     
+    
 
 }
 decrypt(txtToDecrypt: string) {
     return CryptoJS.AES.decrypt(txtToDecrypt, this.key).toString(CryptoJS.enc.Utf8);
-  }
+}
+ngOnInit():void{
+  console.log(this.DataToInput)
+   this.raise=this.DataToInput['riaseN'];
+   this.del=this.DataToInput['delB'];
+    this.colourD=this.DataToInput['delcolour'];
+    this.colourR=this.DataToInput['riasecolour']
+
+ 
+}
 
 
   selctstand:any;
@@ -64,7 +76,7 @@ decrypt(txtToDecrypt: string) {
 
 
   optionbu(fregment:any){
-    if(fregment=="give"){
+    if(fregment=="raise"){
       this.router.navigateByUrl('tlogin#'+ fregment);
       this.raise='block';
       this.del='none';  
@@ -73,7 +85,7 @@ decrypt(txtToDecrypt: string) {
       
 
     }
-    else if (fregment=="myatt"){
+    else if (fregment=="del"){
       this.router.navigateByUrl('tlogin#'+ fregment);
       this.raise='none';
       this.del='block';
@@ -110,10 +122,14 @@ decrypt(txtToDecrypt: string) {
       this.checkdate=data2.date
   
       this.date=data2.date
-      this.aa = this.date.toISOString();
-      this.maindate=this.aa.slice(0,10);
-      alert(this.maindate)
-      data2["date"]=this.maindate;
+      if (this.date) {
+        const dateObject = new Date(this.date);
+        const offsetMinutes = dateObject.getTimezoneOffset();
+        const adjustedDate = new Date(dateObject.getTime() - offsetMinutes * 60 * 1000);
+        this.maindate=adjustedDate.toISOString().substring(0, 10)
+        data2["date"]=this.maindate;
+      } 
+      
   
       this.http.post("http://127.0.0.1:8000/complaintForm/", data2)
       .subscribe((res:any)=>{
@@ -135,11 +151,6 @@ decrypt(txtToDecrypt: string) {
       
       
     }
-
-    
-
-
-
     
 }
 

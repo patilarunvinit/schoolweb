@@ -81,7 +81,9 @@
     </mat-grid-list>
 </div>
   
-<P>{{width}}</P>
+<!-- to get width of device
+    <P>{{width}}</P>
+-->
 
 
 <div class="videomain" >
@@ -324,23 +326,23 @@
         <h1 class="contacth1">CONTACT US</h1>
 
         <div class="contactformdiv2">
-            <form>
+            <form #userPost1="ngForm" enctype="multipart/form-data" method="POST" class="example-form" (ngSubmit)="contactfrom(userPost1)">
                 <mat-form-field class="mat-from"> 
                     <mat-label >NAME</mat-label>
-                    <input matInput  placeholder="Ex. vinit" >
+                    <input matInput name="name"  placeholder="Ex. vinit" ngModel >
                 </mat-form-field><br>
             
                 <mat-form-field  class="mat-from">
-                  <mat-label>EMAIL</mat-label>
-                  <input matInput  placeholder="Ex. abc@gmail.com">
+                  <mat-label for="email">EMAIL</mat-label>
+                  <input matInput type="email" name="email"  placeholder="Ex. abc@gmail.com" ngModel >
                 </mat-form-field><br>
             
                 <mat-form-field  class="mat-from">
                     <mat-label >MASSAGE</mat-label>
-                    <textarea matInput placeholder="Your massage" ></textarea>
+                    <textarea matInput name="massage" placeholder="Your massage" ngModel ></textarea>
                 </mat-form-field><br>
     
-                <button mat-raised-button color="warn"  class="buttoncontact" >SEND</button>
+                <button mat-raised-button color="warn" class="buttoncontact" >SEND</button>
     
             </form>
         </div>

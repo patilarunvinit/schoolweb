@@ -23,8 +23,8 @@
     <mat-grid-tile colspan="8" class="maingrid">
         <div class="mainright">
             <app-tinfo id="tinfo" [style.display]="infodiv"></app-tinfo>
-            <app-tattendance id="tattan" [style.display]="tattan"></app-tattendance>
-            <app-tcomplaint id="tcomplaint" [style.display]="comdiv"></app-tcomplaint>
+            <app-tattendance [DataToInputforMyatt]="DataToInputforMyatt" id="tattan" [style.display]="tattan"></app-tattendance>
+            <app-tcomplaint [DataToInput]="DataToInput" id="tcomplaint" [style.display]="comdiv"></app-tcomplaint>
 
         </div>
         
