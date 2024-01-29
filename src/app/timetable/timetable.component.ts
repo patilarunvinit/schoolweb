@@ -27,7 +27,7 @@ export class TimetableComponent {
     //this.data = history.state.data;
     this.name=this.data[0]['name']
     this.class_div=this.data[0]['class_div']
-    this.http.get("http://127.0.0.1:8000/timetable/?stand="+this.class_div)
+    this.http.get("https://vinitpatil1001.pythonanywhere.com/timetable/?stand="+this.class_div)
    .subscribe((result)=>{
       console.log("result",result)
       this.data=result;

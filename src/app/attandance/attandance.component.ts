@@ -66,12 +66,12 @@ export class AttandanceComponent {
 
     
 
-    this.http.get("http://127.0.0.1:8000/Sattendence/?name="+this.name+"&class_div="+this.class_div )
+    this.http.get("https://vinitpatil1001.pythonanywhere.com/Sattendence/?name="+this.name+"&class_div="+this.class_div )
    .subscribe((result)=>{
       this.StudAttData=result;
    }) 
     
-   this.http.get("http://127.0.0.1:8000/percentageCAl/?name="+this.name+"&class_div="+this.class_div )
+   this.http.get("https://vinitpatil1001.pythonanywhere.com/percentageCAl/?name="+this.name+"&class_div="+this.class_div )
    .subscribe((result)=>{
       this.percentageCAl=result;
       this.percentage=this.percentageCAl['percentage']

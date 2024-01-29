@@ -40,6 +40,8 @@ export class HomeComponent {
   b_day:any;
   address:any;
   image:any;
+  navclose:any;
+  navicon:any;
 
 
  
@@ -136,6 +138,19 @@ export class HomeComponent {
   }
 
 
+
+closenavf() { 
+    this.navclose='none';
+    
+}
+opennav(){ 
+      this.navclose='block';
+
+      
+}
+
+
+
   nav(fregment:any){
     this.Router.navigateByUrl('#'+ fregment)
  
@@ -150,7 +165,7 @@ export class HomeComponent {
 
   studentlogin(data:any) {
     console.log(data);
-    this.http.post("http://127.0.0.1:8000/slogin/", data)
+    this.http.post("https://vinitpatil1001.pythonanywhere.com/slogin/", data)
     .subscribe((res:any)=>{
       this.data=res
       this.massage=res.massage
@@ -179,7 +194,7 @@ export class HomeComponent {
 
   teacherlogin(data:any) {
     console.log(data);
-    this.http.post("http://127.0.0.1:8000/tlogin/", data)
+    this.http.post("https://vinitpatil1001.pythonanywhere.com/tlogin/", data)
     .subscribe((res:any)=>{
       this.data=res
       this.massage=res.massage
@@ -224,7 +239,7 @@ export class HomeComponent {
       
     }
     else {
-      this.http.post("http://127.0.0.1:8000/contact/", data2)
+      this.http.post("https://vinitpatil1001.pythonanywhere.com/contact/", data2)
       .subscribe((res:any)=>{
         this.massage=res.massage
         alert(this.massage)

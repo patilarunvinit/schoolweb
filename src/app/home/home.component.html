@@ -19,23 +19,28 @@
     </div>
     
     <div class="navoptionM">
-        <mat-icon class="mobinavcon">dehaze</mat-icon>
-        <div class="mobileoptiondiv">
-            <button class="navbotton" type="button" mat-button (click)="nav('home')">
-                HOME
-            </button>
+        <mat-icon class="mobinavcon" (click)="opennav()">dehaze</mat-icon>
+        <div class="mobileoptiondiv" [style.display]="navclose">
+            <div class="closebotton" >
+                <mat-icon (click)="closenavf()" class="closenav">clear</mat-icon>       
+                <b >NAVIGATION BAR</b>
+            </div >
+            
+            <div class="navbotton" (click)="nav('home')">
+                <b >HOME</b>
+            </div>
 
-            <button class="navbotton" type="button" mat-button (click)="nav('about')">
-                ABOUT
-            </button>
+            <div class="navbotton" (click)="nav('about')">
+                <b >ABOUT</b>
+            </div>
 
-            <button class="navbotton" type="button" mat-button (click)="nav('contact')">
-                CONTACT
-            </button>
+            <div class="navbotton" (click)="nav('contact')">
+                <b >CONTACT</b>
+            </div>
 
-            <button class="navbotton" type="button" mat-button (click)="nav('BLOG')">
-                BLOG
-            </button>
+            <div class="navbotton" (click)="nav('BLOG')">
+                <b >BLOG</b>
+            </div>
 
     
         </div>
@@ -59,24 +64,30 @@
 
 <div class="servicemain">
     <h1 class="mainh1"><strong>WHY CHOOS US</strong></h1>
-    <mat-grid-list  [cols]="cols" (window:resize)="onResize($event)">
-        <mat-grid-tile class="test890">
-            <img alt="back photo" [src]=learning class="servimg">
-            <h3 class="servh3"><strong>LEARNING</strong></h3>
-            <p class="servp">Education is the key to all the  locked doors of the unknown.</p>
-                   
+    <mat-grid-list [cols]="cols" (window:resize)="onResize($event)">
+        <mat-grid-tile class="serviceborder">
+            <div class="serviceborder1">
+                <img alt="back photo" [src]=learning class="servimg">
+                <h3 class="servh3"><strong>LEARNING</strong></h3>
+                <p class="servp">Education is the key to all the  locked doors of the unknown.</p>
+            </div>
         </mat-grid-tile>
-        <mat-grid-tile class="test890">
-            <img alt="back photo" [src]=event class="servimg">
-            <h3 class="servh3"><strong>EVENTS</strong></h3>
-            <p class="servp">Memorable events don't just happen. They happen to be our business.</p>
-        
+        <mat-grid-tile class="serviceborder">
+            <div class="serviceborder1">
+                <img alt="back photo" [src]=event class="servimg">
+               <h3 class="servh3"><strong>EVENTS</strong></h3>
+               <p class="servp">Memorable events don't just happen. They happen to be our business.</p>
+            </div>
+            
         </mat-grid-tile>
-        <mat-grid-tile class="test890">
-            <img alt="back photo" [src]=teacher class="servimg">
-            <h3 class="servh3"><strong>TELENTED TEACHERS</strong></h3>
-            <p class="servp">Good teaching is one-fourth preparation and three-fourths theater.</p>
+        <mat-grid-tile class="serviceborder" >
+            <div class="serviceborder1" >
+                <img alt="back photo" [src]=teacher class="servimg">
+                <h3 class="servh3"><strong>TELENTED TEACHERS</strong></h3>
+                <p class="servp">Good teaching is one-fourth preparation and three-fourths theater.</p>
         
+            </div>
+            
         </mat-grid-tile>
     </mat-grid-list>
 </div>
@@ -87,14 +98,14 @@
 
 
 <div class="videomain" >
-    <div class="videoindiv1">
+    <section class="videoindiv1">
         <video class="videomainwidth"  loop muted autoplay oncanplay="this.play()" onloadedmetadata="this.muted = true">
             <source [src]="video1" type="video/mp4">
             
           Your browser does not support the video tag.
         </video>
 
-    </div>
+    </section>
     <div class="videoindiv2">
 
 

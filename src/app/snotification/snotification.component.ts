@@ -57,7 +57,7 @@ export class SnotificationComponent {
   
 
   TeachersComAPI(){
-    this.http.get("http://127.0.0.1:8000/notificationSdata/?name="+this.name+"&class_div="+this.class_div)
+    this.http.get("https://vinitpatil1001.pythonanywhere.com/notificationSdata/?name="+this.name+"&class_div="+this.class_div)
     .subscribe((result)=>{
        console.log("result",result)
        this.maindata=result;

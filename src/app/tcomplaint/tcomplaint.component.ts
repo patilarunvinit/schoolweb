@@ -43,7 +43,7 @@ constructor (private router:Router,private http:HttpClient ){
     this.tName=this.name;
     this.mobile_no=this.data[0]['mobile_no']
 
-    this.http.get("http://127.0.0.1:8000/tfilterstand/?name="+this.tName )
+    this.http.get("https://vinitpatil1001.pythonanywhere.com/tfilterstand/?name="+this.tName )
     .subscribe((result)=>{
        console.log("result",result)
        this.filterClass=result;
@@ -131,7 +131,7 @@ ngOnInit():void{
       } 
       
   
-      this.http.post("http://127.0.0.1:8000/complaintForm/", data2)
+      this.http.post("https://vinitpatil1001.pythonanywhere.com/complaintForm/", data2)
       .subscribe((res:any)=>{
         this.massage=res.massage
         alert(this.massage)
@@ -160,7 +160,7 @@ ngOnInit():void{
 
   filterstand(data3:any){
     this.checkstand=data3;
-    this.http.get("http://127.0.0.1:8000/SFilterByStand/?class_div="+this.checkstand )
+    this.http.get("https://vinitpatil1001.pythonanywhere.com/SFilterByStand/?class_div="+this.checkstand )
     .subscribe((result)=>{
       this.filterdate=result;
       console.log(this.filterdate)
@@ -169,7 +169,7 @@ ngOnInit():void{
 
   deletefun(deldata:any){
     this.id=deldata.id
-    this.http.get("http://127.0.0.1:8000/ComDeleteById/?id="+this.id )
+    this.http.get("https://vinitpatil1001.pythonanywhere.com/ComDeleteById/?id="+this.id )
     .subscribe((res:any)=>{
       this.massage=res.massage
       alert(this.massage)
@@ -178,7 +178,7 @@ ngOnInit():void{
   }
 
   TeachersComAPI(){
-    this.http.get("http://127.0.0.1:8000/teacherComp/?teacher_name="+this.tName )
+    this.http.get("https://vinitpatil1001.pythonanywhere.com/teacherComp/?teacher_name="+this.tName )
     .subscribe((result)=>{
        console.log("result",result)
        this.TeacherFilterComp=result;

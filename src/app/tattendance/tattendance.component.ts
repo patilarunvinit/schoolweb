@@ -74,7 +74,7 @@ export class TattendanceComponent {
      
     /*to call get api for check 1st page form for 1st option  */
     
-    this.http.get("http://127.0.0.1:8000/tfilterstand/?name="+this.tNmae )
+    this.http.get("https://vinitpatil1001.pythonanywhere.com/tfilterstand/?name="+this.tNmae )
    .subscribe((result)=>{
       console.log("result",result)
       this.filterClass=result;
@@ -125,7 +125,7 @@ export class TattendanceComponent {
     /*this for to get standerd stud data */
     this.selctstand=data1.standerd
     
-    this.http.get("http://127.0.0.1:8000/ststudends/?stand="+ this.selctstand )
+    this.http.get("https://vinitpatil1001.pythonanywhere.com/ststudends/?stand="+ this.selctstand )
    .subscribe((result)=>{
       console.log("result",result)
       this.studdata=result;
@@ -162,7 +162,7 @@ export class TattendanceComponent {
          
     }
 
-    this.http.post("http://127.0.0.1:8000/attandForS/", this.data123)
+    this.http.post("https://vinitpatil1001.pythonanywhere.com/attandForS/", this.data123)
     .subscribe((res:any)=>{
       this.massage=res.massage
       alert(this.massage)
@@ -208,7 +208,7 @@ export class TattendanceComponent {
 
     /*to call get api for give attand page */
     
-    this.http.get("http://127.0.0.1:8000/attandcheck/?name="+this.tNmae+"&class_div="+this.selctstand+"&date="+this.checkdate )
+    this.http.get("https://vinitpatil1001.pythonanywhere.com/attandcheck/?name="+this.tNmae+"&class_div="+this.selctstand+"&date="+this.checkdate )
    .subscribe((result)=>{
       console.log("result",result)
       this.checkdata=result;
@@ -229,7 +229,7 @@ export class TattendanceComponent {
 
   filterstand(data3:any){
     this.checkstand=data3;
-    this.http.get("http://127.0.0.1:8000/tfilterdate/?name="+this.tNmae+"&class_div="+this.checkstand )
+    this.http.get("https://vinitpatil1001.pythonanywhere.com/tfilterdate/?name="+this.tNmae+"&class_div="+this.checkstand )
     .subscribe((result)=>{
       this.filterdate=result;
       console.log(this.filterdate)
