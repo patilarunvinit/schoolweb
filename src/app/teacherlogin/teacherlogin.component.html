@@ -1,35 +1,41 @@
-<mat-grid-list cols="10" rowHeight="100%">
-    <mat-grid-tile colspan="2" >
-        <div class="mainnavdiv">
-            <button class="navbuttonfroI" [style.background-color]="colourI" type="button" mat-button (click)="mainnav('tinfo')">
-                INFO
-            </button>
-
-            <button class="navbutton" [style.background-color]="colourA" type="button" mat-button (click)="mainnav('attendance')">
-                ATTENDANCE
-            </button>
-
-            <button class="navbutton" [style.background-color]="colourC" type="button" mat-button (click)="mainnav('tcomplaint')">
-                RAISE COMPLAINT
-            </button>
-
-            <button class="navbutton" [style.background-color]="colourL" type="button" mat-button (click)="logout()">
-                LOGOUT
-            </button>
+<body class="testABC">
+    <mat-grid-list cols="10" rowHeight="100%">
+        <mat-grid-tile colspan="2" >
+            <div class="mainnavdiv">
+                <button class="navbuttonfroI" [style.background-color]="colourI" type="button" mat-button (click)="mainnav('tinfo')">
+                    INFO
+                </button>
     
-        </div>
-    </mat-grid-tile>
-
-    <mat-grid-tile colspan="8" class="maingrid">
-        <div class="mainright">
-            <app-tinfo id="tinfo" [style.display]="infodiv"></app-tinfo>
-            <app-tattendance [DataToInputforMyatt]="DataToInputforMyatt" id="tattan" [style.display]="tattan"></app-tattendance>
-            <app-tcomplaint [DataToInput]="DataToInput" id="tcomplaint" [style.display]="comdiv"></app-tcomplaint>
-
-        </div>
+                <button class="navbutton" [style.background-color]="colourA" type="button" mat-button (click)="mainnav('attendance')">
+                    ATTENDANCE
+                </button>
+    
+                <button class="navbutton" [style.background-color]="colourC" type="button" mat-button (click)="mainnav('tcomplaint')">
+                    RAISE COMPLAINT
+                </button>
+    
+                <button class="navbutton" [style.background-color]="colourL" type="button" mat-button (click)="logout()">
+                    LOGOUT
+                </button>
         
-        
-        
-    </mat-grid-tile>
-  </mat-grid-list>
+            </div>
+        </mat-grid-tile>
+    
+        <mat-grid-tile colspan="8" class="maingrid">
+            <div class="mainright">
+                <app-tinfo id="tinfo" [style.display]="infodiv"></app-tinfo>
+                <app-tattendance [DataToInputforMyatt]="DataToInputforMyatt" id="tattan" [style.display]="tattan"></app-tattendance>
+                <app-tcomplaint [DataToInput]="DataToInput" id="tcomplaint" [style.display]="comdiv"></app-tcomplaint>
+    
+            </div>
+            
+            
+            
+        </mat-grid-tile>
+      </mat-grid-list>
+</body>
  
+<body>
+    <h1>Currently improving. Thanks for your patience!</h1>
+    <h2>For optimal viewing, open the site on a desktop. Thank you!</h2>
+</body>
