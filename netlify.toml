@@ -3,6 +3,7 @@
   command = "ng build Sproject"
   functions = "netlify/functions"
   publish = "c:/Users/WIN 10/Sproject"
+  node_version = "18.16.0"
 
   ## Uncomment to use this redirect for Single Page Applications like create-react-app.
   ## Not needed for static site generators.
