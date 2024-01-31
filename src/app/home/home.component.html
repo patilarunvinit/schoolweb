@@ -216,7 +216,12 @@
 <div class="stuloginmain" [style.display]="display1">
     <div class="closebdiv">
         <mat-icon (click)="close1()" class="closebutton">clear</mat-icon>       
+        <!-- just to give user data fir test-->
+        <p style="text-align: center;"><b>example ID<br>User:- vinit<br> password:- v@12345678</b></p>
+
     </div>
+    
+
     <div style="width: 80%;height: 60%;left: 10%;top:20%;position: absolute;">
         <form #userPost="ngForm" enctype="multipart/form-data" method="POST" class="example-form" (ngSubmit)="studentlogin(userPost.value)">
                         
@@ -241,8 +246,12 @@
     teacher login window
 -->
 <div class="teachloginmain" [style.display]="display2">
+
     <div class="closebdiv">
         <mat-icon (click)="close1()" class="closebutton">clear</mat-icon>   
+        <!-- just to give user data fir test-->
+        <p style="text-align: center;"><b>example ID<br>User:- jyostna<br> password:- j@12345678</b></p>
+    </div>
         <div style="width: 80%;height: 60%;left: 10%;top:20%;position: absolute;">
             <form #userPost2="ngForm" enctype="multipart/form-data" method="POST" class="example-form" (ngSubmit)="teacherlogin(userPost2.value)">
                             
@@ -260,7 +269,7 @@
     
             </form>
         </div>    
-    </div>
+   
     
 </div>
 
@@ -317,7 +326,7 @@
                     <mat-icon class="contacticon">location_on</mat-icon>
                     <strong>ADDRESS</strong>
                 </h1><br>
-                <p class="contactinfo">151, 15th Floor, B Wing, Mittal Tower,<br> Nariman Point,mumbai 421 567</p>
+                <p class="contactinfo">151, 15th Floor, B Wing, Mittal Tower, Nariman Point,mumbai 421 567</p>
 
             </div>
             <div class="contactnoin">
