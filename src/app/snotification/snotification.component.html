@@ -20,9 +20,27 @@
               <div class="listdiv">
                 <ol class="list" >
                   <ng-container *ngFor="let item of TeacherFilterComp; index as i" >
-                    <li (click)="popupON(item.id)">
+                    <li >
+                      <div (click)="popupON(item.id)" class="compLine" [style.filter]="filtervalue">
+                        <mat-grid-list cols="3" rowHeight="45%" >
+                          <mat-grid-tile colspan="2" >
+                            Complaint From:- {{item.teacher_name}}
+                          </mat-grid-tile>
+                          <mat-grid-tile colspan="1" >
+                            Complant Id:-
+                            {{item.id}}
+                          </mat-grid-tile>
+                          <mat-grid-tile colspan="2" >
+                            Class/Div:-{{item.class_div}}
+                          </mat-grid-tile>
+                          <mat-grid-tile colspan="1" >
+                            <mat-icon class="iconClass">query_builder</mat-icon >{{test(item.complaint_date1)}}
+  
+                          </mat-grid-tile>
+                        </mat-grid-list>
+                      </div>
                       
-                        <div class="compLine" [style.filter]="filtervalue">
+                        <!-- <div class="compLine" [style.filter]="filtervalue">
                             <div class="uperLine">
                               <b class="NameDivDateSty">Complaint From:- {{item.teacher_name}}</b>
                               <b class="NameDivDateSty">
@@ -38,7 +56,7 @@
                             <div class="Listbutton" >
                                <mat-icon class="iconClass">query_builder</mat-icon >{{test(item.complaint_date1)}}
                             </div>
-                          </div>
+                          </div> -->
                                          
                     </li>
                   
@@ -57,9 +75,9 @@
             </div>
                 <div class="infolowerdiv">
                 <h1 class="textpopup">Teacher Name:-<b> {{tNameP}}</b></h1>
-                <h1 class="textpopup">Mobile No:-<b>{{mobile_no}} </b></h1>
+                <h1 class="textpopup">Mobile No:-<b> {{mobile_no}} </b></h1>
                 <h1 class="textpopup">Meet Date:-<b> {{dateP}}</b></h1>
-                <h1 class="textpopup">Complaint Id:-<b>{{idP}}</b></h1>
+                <h1 class="textpopup">Complaint Id:-<b> {{idP}}</b></h1>
                 <h1 class="complpopup">Complaint:-
                   <b >
                     {{complaintP}}

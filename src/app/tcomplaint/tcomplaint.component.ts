@@ -45,9 +45,9 @@ constructor (private router:Router,private http:HttpClient ){
 
     this.http.get("https://vinitpatil1001.pythonanywhere.com/tfilterstand/?name="+this.tName )
     .subscribe((result)=>{
-       console.log("result",result)
+      //  console.log("result",result)
        this.filterClass=result;
-       console.log(this.filterClass)
+      //  console.log(this.filterClass)
     }) 
   
     this.TeachersComAPI()
@@ -59,7 +59,7 @@ decrypt(txtToDecrypt: string) {
     return CryptoJS.AES.decrypt(txtToDecrypt, this.key).toString(CryptoJS.enc.Utf8);
 }
 ngOnInit():void{
-  console.log(this.DataToInput)
+  // console.log(this.DataToInput)
    this.raise=this.DataToInput['riaseN'];
    this.del=this.DataToInput['delB'];
     this.colourD=this.DataToInput['delcolour'];
@@ -103,7 +103,8 @@ ngOnInit():void{
 
   checkform(datamain:NgForm) {
     const data2 = datamain.value;
-    console.log(data2.name)
+    // console.log(data2.name)
+    alert(data2.teacher_name)
     if(data2.standerd=="" && data2.date==""){
       alert("both empty")
 
@@ -130,8 +131,12 @@ ngOnInit():void{
         data2["date"]=this.maindate;
       } 
       
-  
-      this.http.post("https://vinitpatil1001.pythonanywhere.com/complaintForm/", data2)
+      const formData = data2;
+      formData.teacher_name = this.tName;
+      formData.mobile_no=this.mobile_no
+      
+      
+      this.http.post("https://vinitpatil1001.pythonanywhere.com/complaintForm/", formData)
       .subscribe((res:any)=>{
         this.massage=res.massage
         alert(this.massage)
@@ -146,9 +151,8 @@ ngOnInit():void{
         }
       },
       )  
-        console.log(data2);
-        datamain.reset();
       
+      datamain.reset();      
       
     }
     
@@ -163,7 +167,7 @@ ngOnInit():void{
     this.http.get("https://vinitpatil1001.pythonanywhere.com/SFilterByStand/?class_div="+this.checkstand )
     .subscribe((result)=>{
       this.filterdate=result;
-      console.log(this.filterdate)
+      // console.log(this.filterdate)
    })  
   }
 
@@ -180,9 +184,9 @@ ngOnInit():void{
   TeachersComAPI(){
     this.http.get("https://vinitpatil1001.pythonanywhere.com/teacherComp/?teacher_name="+this.tName )
     .subscribe((result)=>{
-       console.log("result",result)
+      //  console.log("result",result)
        this.TeacherFilterComp=result;
-       console.log(this.TeacherFilterComp)
+      //  console.log(this.TeacherFilterComp)
     }) 
   }
 

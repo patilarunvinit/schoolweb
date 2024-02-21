@@ -19,10 +19,7 @@ import * as CryptoJS from 'crypto-js';
   styleUrls: ['./studentlogin.component.css']
 })
 export class StudentloginComponent {
-  infodiv:any;
-  ttdiv:any;
-  attdiv:any;
-  notdiv:any;
+  
   test:any;
   username:any;
   data:any;
@@ -44,6 +41,15 @@ export class StudentloginComponent {
   a:any;
   data1:any;
   notificationCount:any;
+  screenWidth:any;
+  screenHeight:any;
+  width:any;
+  colnav:any;
+  colmain:any;
+  ttdiv='none';
+  attdiv='none';
+  infodiv='block';
+  notdiv='none';
   
  
   
@@ -77,10 +83,12 @@ export class StudentloginComponent {
     decrypt(txtToDecrypt: string) {
       return CryptoJS.AES.decrypt(txtToDecrypt, this.key).toString(CryptoJS.enc.Utf8);
     }
- 
+
+
     
-    ngOnInit() {
-      this.route.fragment.subscribe((fragment123: any) => {
+    
+  ngOnInit() {
+    this.route.fragment.subscribe((fragment123: any) => {
         if(fragment123=="info"){
           this.navigateToFragment('info');
           this.ttdiv='none';
@@ -134,12 +142,47 @@ export class StudentloginComponent {
     
           //this.reloadCurrentRoute()
         }
-      });
+    });
+
+    this.screenWidth = window.innerWidth;
+    this.screenHeight = window.innerHeight;
+
+
+    this.width = (window.innerWidth) ;
+    if(this.width<=600){
+      this.colnav="0";
+      this.colmain="10";
+
+
     }
+    else{
+      this.colnav="2";
+      this.colmain="8";
+ }
+ window.addEventListener('resize', this.onResize.bind(this));
+
+}
+
+  onResize(event:any) {
+    this.width = (window.innerWidth) ;
+    if(this.width<=600){
+      this.colnav="0";
+      this.colmain="10";
+
+
+    }
+    else{
+      this.colnav="2";
+      this.colmain="8";
+
+
+    }
+  }
     
    
  
  
+    
   mainnav(fragment:any){
     if(fragment=="info"){
       this.navigateToFragment('info');
@@ -208,7 +251,19 @@ export class StudentloginComponent {
     location.reload();
     
   }
+  
+  filterforback:any;
+  navbar="none";
+  opennav(){ 
+    this.navbar='block';
+    this.filterforback="blur(7px)";
 
+  }
+  closenav() { 
+    this.navbar='none';
+    this.filterforback="none";
+    
+  }
 
   key="data"
 
@@ -217,7 +272,6 @@ export class StudentloginComponent {
     sessionStorage.removeItem(this.key)
     this.Router.navigate([''])
   }
-
 
  
 

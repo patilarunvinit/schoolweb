@@ -63,9 +63,6 @@ export class AttandanceComponent {
       
     
 
-
-    
-
     this.http.get("https://vinitpatil1001.pythonanywhere.com/Sattendence/?name="+this.name+"&class_div="+this.class_div )
    .subscribe((result)=>{
       this.StudAttData=result;
@@ -78,6 +75,48 @@ export class AttandanceComponent {
    }) 
    
 
+  }
+
+  screenWidth:any;
+  screenHeight:any;
+  width:any;
+  namepart:any;
+  rollpart:any;
+
+  ngOnInit() {
+  this.screenWidth = window.innerWidth;
+    this.screenHeight = window.innerHeight;
+
+
+    this.width = (window.innerWidth) ;
+    if(this.width<=600){
+      this.namepart="2";
+      this.rollpart="0";
+
+
+    }
+    else{
+      this.namepart="1";
+      this.rollpart="1";
+ }
+ window.addEventListener('resize', this.onResize.bind(this));
+
+}
+
+  onResize(event:any) {
+    this.width = (window.innerWidth) ;
+    if(this.width<=600){
+      this.namepart="2";
+      this.rollpart="0";
+
+
+    }
+    else{
+      this.namepart="1";
+      this.rollpart="1";
+
+
+    }
   }
   
 

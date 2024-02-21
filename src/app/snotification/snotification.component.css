@@ -30,64 +30,32 @@
   width: 90%;
   height: 100%;
   overflow:auto;
-  position:relative;
+  position:absolute;
 }
 .list{
    width:100%;
    margin: 10px 0px;
+   margin-left: 0px ;
+   padding-left: 5px;
    list-style-type: none; 
 }
 .compLine{
-  /* border: 2px solid red; */
   width: 90%;
   height: 60px;
   background-color: rgb(84, 115, 255);
-  margin: 20px 0px ;
+  margin: 20px;
   border-radius: 10px;
-  /* filter: blur(5px); */
-  pointer-events: none; 
+  margin-left: 0px; 
   box-shadow: 
-        5px 5px 10px lightblue,
+        5px 5px 10px #add8e6,
         10px 10px 20px rgba(0, 0, 0, 1);
   
 }
-.uperLine{
-  /* border: 2px solid black; */
-  width: 80%;
-  height: 30px;
-  padding: 5px 0px 0px 0px;
-}
-.lowerLine{
-   /* border: 2px solid yellow;  */
-  width: 80%;
-  height: 25px;
-  position: relative;
-}
-.NameDivDateSty{
-  margin: 0px 20px;
-}
-.CompSty{
-  width: 100%;
-  display: inline-block;
-  margin: 0px 10px;
-  white-space: nowrap; 
-  overflow: hidden; 
-  text-overflow: ellipsis;
 
-}
 
-.Listbutton{
-  position: relative;
-  float: right;
-  right: 15px;
-  top: -30px;
-  width: 16%;
-  height: 70%;
 
-}
-.inputdipblock{
-  display:none;
-}
+
+
 
 .iconClass{
   font-size: 18px;
@@ -142,3 +110,50 @@
   height: 38%;
   overflow: auto;
 }
+
+
+
+@media only screen and (max-width:600px) {
+  .forms1{
+    font-size: 13px;
+}
+.iconClass{
+  font-size: 18px;
+
+}
+.infodiv{
+  width: 80%;
+  height: 80%;
+  font-size: 13px;
+  
+}
+.textpopup ,.complpopup{
+  font-size: 20px;
+}
+}
+
+
+
+
+
+@media only screen and (max-width:400px) {
+  
+  .forms1{
+    font-size: 10px;
+}
+.iconClass{
+  font-size: 15px;
+ ;
+  
+}
+.infodiv{
+  font-size: 10px;
+  
+}
+.textpopup ,.complpopup{
+  font-size: 15px;
+}
+}
+
+
+

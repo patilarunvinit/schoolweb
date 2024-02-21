@@ -14,7 +14,7 @@
     <div class="lowerdiv">
         <table class="tttable">
             <tr >
-                <th>TIME/DAY</th>
+                <th class="Fstline">TIME/DAY</th>
                 <th>Monday</th>
                 <th>Tuesday</th>
                 <th>Wednesday</th>
@@ -27,13 +27,13 @@
         
             <ng-container *ngFor="let item of data; index as i">  
                 <tr *ngIf="i==4; else elseid">
-                    <td><b>{{item.time}}</b></td>
+                    <td class="Fstline"><b>{{item.time}}</b></td>
                     <td colspan="6" style="text-align: center;">break</td>           
                 
                 </tr>
                 <ng-template #elseid>
                     <tr>
-                        <td><b>{{item.time}}</b></td>
+                        <td class="Fstline"><b>{{item.time}}</b></td>
                         <td>{{item.Monday}}</td>
                         <td>{{item.Tuesday}}</td>
                         <td>{{item.Wednesday}}</td>

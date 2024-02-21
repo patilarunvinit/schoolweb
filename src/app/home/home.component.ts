@@ -81,18 +81,10 @@ export class HomeComponent {
       this.colspan1="1";
       this.colspan2="2";
       this.rowHeight="80%"
+ }
+ window.addEventListener('resize', this.onResize.bind(this));
 
-    
-
-    }
-
-    
-    
-
-    
-    
-    
-  }
+}
 
   onResize(event:any) {
     this.width = (window.innerWidth) ;
@@ -164,12 +156,17 @@ opennav(){
 
 
   studentlogin(data:any) {
-    console.log(data);
+    // console.log(data);
     this.http.post("https://vinitpatil1001.pythonanywhere.com/slogin/", data)
     .subscribe((res:any)=>{
       this.data=res
       this.massage=res.massage
       this.data=res.Sdata
+     console.log(this.data)
+      if(this.data[0].username=='freasher2'){
+        alert('new user')
+      }
+      
       alert(this.massage)
       if(this.massage=="logged in successfuly"){
 

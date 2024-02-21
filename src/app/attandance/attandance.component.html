@@ -5,11 +5,11 @@
         
         <mat-grid-list cols="2" rowHeight="50%">
             
-            <mat-grid-tile colspan="1" >
+            <mat-grid-tile [colspan]="namepart" >
                 NAME:- <b>{{name}}</b>
             </mat-grid-tile>
 
-            <mat-grid-tile colspan="1">
+            <mat-grid-tile [colspan]="rollpart">
                 CLASS/DIV:-<b>{{class_div}}</b>
                 
             </mat-grid-tile>
@@ -23,9 +23,9 @@
             <mat-grid-tile colspan="1" class="test">
                 <div class="scrollclass"> 
                     <table >
-                        <tr class="fixclass" >
-                            <th>DATES/MONTHS</th>
-                            <th>January</th>
+                        <tr >
+                            <th class="stlinetr" style="position: sticky;left: 0px;z-index: 2;">DATES/MONTHS</th>
+                            <th >January</th>
                             <th>February</th>
                             <th>March</th>
                             <th>April</th>
@@ -41,7 +41,7 @@
                         </tr>
                         <ng-container *ngFor="let item of list; index as i">
                                 <tr >
-                                    <td ><b>{{item}}</b></td>
+                                    <td class="stline"><b>{{item}}</b></td>
 
                                     {{isWeekend('2024-01-'+(i+1))}}
                                     <td *ngIf="jan==true; else jan1" style="background-color: black;"></td>
