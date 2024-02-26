@@ -6,14 +6,15 @@
     margin: 3px 0px 3px 0px;
     width: 100%;
     height: 10%;
-    background-color: green;;
+    background-color: green;
 }
 
 .navbutton{
     margin: 3px 0px 3px 0px;
     width: 100%;
     height: 10%;
-    background-color: rgb(194, 255, 137);;
+    background-color: rgb(196, 255, 196);
+    /* background-color: rgb(194, 255, 137); */
 }
 
 
@@ -68,13 +69,84 @@ mat-grid-tile {
 .testXYZ{
     display: none;
 }
+
+.Mnavdisplay{
+    display: none;
+}
+.mainnavdiv{
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+.navoptionM{
+    top:2%;
+    left:2%;
+    position: absolute;
+    z-index: 999;
+   
+}
+.navimaindivM{
+    width: 50%;
+    height: 100%;
+    top:0px;
+    left: 0px;
+    position:absolute;
+    z-index: 999;
+    display: none;
+    background-color: green;
+}
+.navoptionM:hover .navimaindivM{
+    display: block;
+}
+.closebotton{
+    width:190%;
+}
+.closeicon{
+    font-size: 30px;
+    float: right;
+    margin: 12px 0px 0px 0px;
+}
+
+
+
 @media only screen and (max-width:600px) {
 
-
-    .testABC{
+    /* .testABC{
         display: none;
     }
     .testXYZ{
         display: block;
+    } */
+    .Mnavdisplay{
+        display: block;
     }
+
+    .navbuttonfroI{
+        margin: 10px 5% 3px 5%;
+        width: 90%;
+        height: 10%;
+        background-color: rgb(84, 115, 255);
+        font-size: 14px;
+    }
+    .navbutton{
+        margin: 3px 5%;
+        width: 90%;
+        height: 10%;
+        background-color: skyblue;
+        font-size: 14px;
+    }
+    
+    
+    
 }
+
+@media only screen and (max-width:400px) {
+    .navbuttonfroI{
+        font-size: 11px;
+    }
+    .navbutton{
+        font-size: 11px;
+    }
+    
+}
+
