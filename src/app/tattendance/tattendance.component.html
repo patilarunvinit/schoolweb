@@ -2,7 +2,7 @@
 <div class="attmainmain" >
   
     <div class="uperdiv">
-        <mat-grid-list cols="2" rowHeight="75%">
+        <mat-grid-list [cols]="maincol" [rowHeight]="rowHeight">
             <mat-grid-tile colspan="1">
                 <button class="optionbutton1"  [style.background-color]="colourG" type="button" mat-button (click)="optionbu('give')" >
                   GIVE ATTENDANCE

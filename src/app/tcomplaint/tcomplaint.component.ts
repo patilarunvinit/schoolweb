@@ -33,6 +33,11 @@ export class TcomplaintComponent {
   TeacherFilterComp:any;
   mobile_no:any;
   @Input() DataToInput: any | undefined;
+  screenWidth: number;
+  screenHeight: number;
+  width: number;
+  maincol: string;
+  rowHeight: string;
   
   
 constructor (private router:Router,private http:HttpClient ){
@@ -52,9 +57,37 @@ constructor (private router:Router,private http:HttpClient ){
   
     this.TeachersComAPI()
     
-    
-
-}
+    this.screenWidth = window.innerWidth;
+    this.screenHeight = window.innerHeight;
+ 
+ 
+    this.width = (window.innerWidth) ;
+    if(this.width<=600){
+      this.maincol="1";
+      this.rowHeight="50%"
+    }
+    else{
+      this.maincol="2";
+      this.rowHeight="75%"
+ 
+ }
+ window.addEventListener('resize', this.onResize.bind(this));
+ 
+ }
+ 
+  onResize(event:any) {
+    this.width = (window.innerWidth) ;
+    if(this.width<=600){
+      this.maincol="1";
+      this.rowHeight="50%"
+ 
+    }
+    else{
+      this.maincol="2";
+      this.rowHeight="75%"
+ 
+    }
+  }
 decrypt(txtToDecrypt: string) {
     return CryptoJS.AES.decrypt(txtToDecrypt, this.key).toString(CryptoJS.enc.Utf8);
 }
